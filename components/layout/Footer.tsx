@@ -80,8 +80,8 @@ export function Footer() {
                             </li>
                             <li className="flex items-start gap-3">
                                 <Mail className="w-4 h-4 text-brand-cyan mt-1 shrink-0" />
-                                <a href="mailto:info@viztv.in" className="text-white/60 hover:text-brand-cyan transition-colors text-sm leading-relaxed break-all">
-                                    info@viztv.in
+                                <a href="mailto:rajammy1234567@gmail.com" className="text-white/60 hover:text-brand-cyan transition-colors text-sm leading-relaxed break-all">
+                                    rajammy1234567@gmail.com
                                 </a>
                             </li>
                             <li className="flex items-start gap-3">
