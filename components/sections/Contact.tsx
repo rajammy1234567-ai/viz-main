@@ -32,7 +32,9 @@ export function Contact() {
                             </div>
                             <div>
                                 <p className="text-xs text-white/60 uppercase tracking-wider mb-1">Phone</p>
-                                <a href="tel:+916284689718" className="font-semibold hover:underline">+91 6284689718</a>
+                                <a href="tel:+919876697109" className="text-white/60 hover:text-brand-cyan transition-colors text-sm leading-relaxed">
+                                    +91 9876697109
+                                </a>
                             </div>
                         </div>
 
@@ -53,7 +55,7 @@ export function Contact() {
                             <div>
                                 <p className="text-xs text-white/60 uppercase tracking-wider mb-1">Address</p>
                                 <p className="font-semibold leading-relaxed">
-                                    935, 9th Floor, Escon Prima,<br />
+                                    Motiaz Royal Business Park,<br />
                                     Zirakpur, India 140603,<br />
                                     India
                                 </p>
