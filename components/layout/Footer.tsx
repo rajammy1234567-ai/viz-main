@@ -74,8 +74,8 @@ export function Footer() {
                         <ul className="space-y-5">
                             <li className="flex items-start gap-3">
                                 <Phone className="w-4 h-4 text-brand-cyan mt-1 shrink-0" />
-                                <a href="tel:+916284689718" className="text-white/60 hover:text-brand-cyan transition-colors text-sm leading-relaxed">
-                                    +91 6284689718
+                                <a href="tel:+919876697109" className="text-white/60 hover:text-brand-cyan transition-colors text-sm leading-relaxed">
+                                    +91 9876697109
                                 </a>
                             </li>
                             <li className="flex items-start gap-3">
@@ -87,7 +87,7 @@ export function Footer() {
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-4 h-4 text-brand-cyan mt-1 shrink-0" />
                                 <span className="text-white/60 text-sm leading-relaxed">
-                                    935, 9th Floor, Escon Prima, Zirakpur, India 140603, India
+                                    Motiaz Royal Business Park, Zirakpur
                                 </span>
                             </li>
                         </ul>
