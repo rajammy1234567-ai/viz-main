@@ -20,6 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+      <meta name="google-site-verification" content="Rd37-qm7PcqAC5AkHSfOEDUCYyVY8EedadtID1LmYiA" />
+      </head>
       <body className={`${inter.variable} font-sans antialiased bg-background text-foreground`}>
         <LoadingScreen />
         <ThemeProvider
