@@ -1,16 +1,34 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { LoadingScreen } from "@/components/LoadingScreen";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "AI-Powered Digital Agency | InnovateAI",
-  description: "Transform your brand with AI-driven digital solutions. Premium web design, branding, and marketing services.",
+  title: "VIZ Digital | Business Consulting & Growth Solutions | Zirakpur, Punjab",
+  description: "VIZ Digital helps businesses, entrepreneurs, and emerging brands turn ideas into strong, scalable, and sustainable ventures. Where Strategy Meets Innovation.",
+  keywords: [
+    "VIZ Digital",
+    "business consulting",
+    "growth solutions",
+    "Zirakpur Punjab",
+    "digital marketing",
+    "information technology consulting",
+    "brand management",
+    "franchise consultancy",
+    "restaurant setup consultancy",
+  ],
+  openGraph: {
+    title: "VIZ Digital | Where Strategy Meets Innovation",
+    description: "Premium business consulting and growth solutions for businesses, entrepreneurs, and emerging brands.",
+    url: "https://vizdigital.com",
+    siteName: "VIZ Digital",
+    locale: "en_IN",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -19,24 +37,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-      <meta name="google-site-verification" content="Rd37-qm7PcqAC5AkHSfOEDUCYyVY8EedadtID1LmYiA" />
-      </head>
-      <body className={`${inter.variable} font-sans antialiased bg-background text-foreground`}>
-        <LoadingScreen />
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark" // Default to dark as per plan
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="flex min-h-screen flex-col">
-            <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-        </ThemeProvider>
+    <html lang="en" className="light overflow-x-hidden">
+      <body className={`${inter.variable} font-sans antialiased bg-white text-slate-900 selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden min-h-screen w-full max-w-full`}>
+        <div className="flex min-h-screen flex-col overflow-x-hidden w-full max-w-full">
+          <Navbar />
+          <main className="flex-1 w-full max-w-full overflow-x-hidden">{children}</main>
+          <Footer />
+          <WhatsAppButton />
+        </div>
       </body>
     </html>
   );

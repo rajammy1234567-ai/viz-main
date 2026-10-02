@@ -27,30 +27,30 @@ export function LocationSection() {
                                     <Phone className="w-5 h-5 text-brand-cyan" />
                                 </div>
                                 <div className="space-y-1">
-                                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Contact</p>
-                                    <a href="tel:+916284689718" className="text-lg font-medium text-navy-900 dark:text-white hover:text-brand-cyan transition-colors">+91 6284689718</a><br></br>
-                                    <a href="https://wa.me/916284689718" target="_blank" rel="noopener noreferrer" className="text-lg font-medium text-navy-900 dark:text-white hover:text-brand-cyan transition-colors">WhatsApp: +91 6284689718</a>
+                                    <p className="text-sm font-medium text-slate-500 uppercase tracking-wider">Contact</p>
+                                    <a href="tel:9876687109" className="text-lg font-medium text-slate-900 hover:text-blue-600 transition-colors">98766 87109</a><br></br>
+                                    <a href="https://wa.me/919876687109" target="_blank" rel="noopener noreferrer" className="text-lg font-medium text-slate-900 hover:text-blue-600 transition-colors">WhatsApp: 98766 87109</a>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 rounded-full bg-brand-purple/10 flex items-center justify-center shrink-0">
-                                    <Mail className="w-5 h-5 text-brand-purple" />
+                                <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center shrink-0">
+                                    <Mail className="w-5 h-5 text-orange-600" />
                                 </div>
                                 <div className="space-y-1">
-                                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Email</p>
-                                    <a href="mailto:info@viztv.in" className="text-lg font-medium text-navy-900 dark:text-white hover:text-brand-purple transition-colors">info@viztv.in</a>
+                                    <p className="text-sm font-medium text-slate-500 uppercase tracking-wider">Email</p>
+                                    <a href="mailto:vizdigitalofficial@gmail.com" className="text-lg font-medium text-slate-900 hover:text-blue-600 transition-colors">vizdigitalofficial@gmail.com</a>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 rounded-full bg-brand-cyan/10 flex items-center justify-center shrink-0">
-                                    <MapPin className="w-5 h-5 text-brand-cyan" />
+                                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
+                                    <MapPin className="w-5 h-5 text-blue-600" />
                                 </div>
                                 <div className="space-y-1">
-                                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Address</p>
-                                    <p className="text-lg font-medium text-navy-900 dark:text-white max-w-sm">
-                                        935, 9th Floor, Escon Prima,<br />Zirakpur, India 140603,<br />India
+                                    <p className="text-sm font-medium text-slate-500 uppercase tracking-wider">Address</p>
+                                    <p className="text-lg font-medium text-slate-900 max-w-sm">
+                                        Zirakpur, Punjab,<br />India
                                     </p>
                                 </div>
                             </div>

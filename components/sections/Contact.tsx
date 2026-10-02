@@ -32,8 +32,8 @@ export function Contact() {
                             </div>
                             <div>
                                 <p className="text-xs text-white/60 uppercase tracking-wider mb-1">Phone</p>
-                                <a href="tel:+919876697109" className="text-white/60 hover:text-brand-cyan transition-colors text-sm leading-relaxed">
-                                    +91 9876697109
+                                <a href="tel:9876687109" className="text-white hover:underline transition-colors text-sm font-semibold">
+                                    98766 87109
                                 </a>
                             </div>
                         </div>
@@ -44,7 +44,7 @@ export function Contact() {
                             </div>
                             <div>
                                 <p className="text-xs text-white/60 uppercase tracking-wider mb-1">Email</p>
-                                <a href="mailto:info@viztv.in" className="font-semibold hover:underline break-all">info@viztv.in</a>
+                                <a href="mailto:vizdigitalofficial@gmail.com" className="font-semibold hover:underline break-all">vizdigitalofficial@gmail.com</a>
                             </div>
                         </div>
 
@@ -55,8 +55,7 @@ export function Contact() {
                             <div>
                                 <p className="text-xs text-white/60 uppercase tracking-wider mb-1">Address</p>
                                 <p className="font-semibold leading-relaxed">
-                                    Motiaz Royal Business Park,<br />
-                                    Zirakpur, India 140603,<br />
+                                    Zirakpur, Punjab,<br />
                                     India
                                 </p>
                             </div>
