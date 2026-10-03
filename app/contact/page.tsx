@@ -14,6 +14,8 @@ import {
   CheckCircle2,
   Sparkles,
 } from "lucide-react";
+import { LocationSection } from "@/components/sections/Location";
+import { SpotlightCard, ShinyText, BlurText } from "@/components/animations";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -51,11 +53,24 @@ export default function ContactPage() {
       <section className="bg-gradient-to-b from-blue-50/60 via-slate-50/40 to-white py-16 sm:py-20 border-b border-slate-100">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center space-y-4">
-            <span className="text-xs font-bold text-blue-700 tracking-wider uppercase bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200">
-              Get In Touch
-            </span>
+            <div className="inline-flex items-center gap-2 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200">
+              <ShinyText
+                text="Get In Touch"
+                color="#1d4ed8"
+                shineColor="#f97316"
+                speed={3}
+                className="text-xs font-bold tracking-wider uppercase"
+              />
+            </div>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight">
-              Contact <span className="text-blue-600">VIZ Digital</span>
+              <BlurText
+                text="Contact"
+                delay={60}
+                className="text-slate-900 inline-block mr-2"
+              />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-orange-500">
+                VIZ Digital
+              </span>
             </h1>
             <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
               Have a question about our consulting solutions? Reach out to our team in Zirakpur, Punjab to discuss your business vision.
@@ -70,7 +85,10 @@ export default function ContactPage() {
           <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-10">
             {/* Left Contact Information Card (5 cols) */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="bg-slate-50/90 rounded-3xl p-8 border border-slate-200/80 shadow-soft space-y-8">
+              <SpotlightCard
+                spotlightColor="rgba(37, 99, 235, 0.08)"
+                className="bg-slate-50/90 rounded-3xl p-8 border border-slate-200/80 shadow-soft space-y-8 hover:border-blue-400 hover:shadow-card-hover transition-all duration-300"
+              >
                 <div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-2">
                     Contact Details
@@ -172,12 +190,15 @@ export default function ContactPage() {
                     <span>Chat With Us on WhatsApp</span>
                   </a>
                 </div>
-              </div>
+              </SpotlightCard>
             </div>
 
             {/* Right Contact Form (7 cols) */}
             <div className="lg:col-span-7">
-              <div className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/90 shadow-soft">
+              <SpotlightCard
+                spotlightColor="rgba(37, 99, 235, 0.08)"
+                className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/90 shadow-soft hover:border-blue-400 hover:shadow-card-hover transition-all duration-300"
+              >
                 {isSubmitted ? (
                   <div className="py-12 text-center space-y-4">
                     <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
@@ -324,43 +345,14 @@ export default function ContactPage() {
                     </Button>
                   </form>
                 )}
-              </div>
+              </SpotlightCard>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Map & Office Location Section */}
-      <section className="py-16 sm:py-20 bg-slate-50">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto space-y-8">
-            <div className="text-center space-y-2">
-              <span className="text-xs font-bold text-blue-700 tracking-wider uppercase bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200">
-                Location
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-                Our Base in Zirakpur, Punjab
-              </h2>
-              <p className="text-slate-600 text-sm">
-                Strategically positioned in the Chandigarh tricity region to serve businesses locally and across India.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-soft h-[380px] w-full">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54944.37213813968!2d76.79383679124445!3d30.64253139366431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fe4596395b057%3A0xf63980a312d4d8ef!2sZirakpur%2C%20Punjab!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen={true}
-                loading="lazy"
-                title="VIZ Digital Location Map - Zirakpur, Punjab"
-                className="w-full h-full"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Office & Headquarters Location Section */}
+      <LocationSection />
     </div>
   );
 }

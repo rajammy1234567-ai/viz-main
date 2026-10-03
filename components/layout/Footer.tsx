@@ -4,7 +4,9 @@ import { Phone, Mail, MapPin, ArrowRight, MessageCircle } from "lucide-react";
 
 export function Footer() {
   const servicesList = [
-    { name: "Digital Marketing", href: "/services#digital-marketing" },
+    { name: "Digital Marketing & Growth", href: "/services#digital-marketing" },
+    { name: "AI Classes & Masterclasses", href: "/services#ai-classes" },
+    { name: "Robotics & Hardware Labs", href: "/services#robotics-classes" },
     { name: "Information Technology", href: "/services#information-technology" },
     { name: "Brand Management & Branding", href: "/services#brand-management" },
     { name: "Franchise Consultancy", href: "/services#franchise-consultancy" },
@@ -13,8 +15,9 @@ export function Footer() {
 
   const quickLinks = [
     { name: "Home", href: "/" },
+    { name: "Services & Masterclasses", href: "/services" },
+    { name: "AI & Robotics Classes", href: "/services#ai-classes" },
     { name: "About Us", href: "/about" },
-    { name: "Services", href: "/services" },
     { name: "Our Clients", href: "/clients" },
     { name: "Contact Us", href: "/contact" },
   ];
@@ -29,10 +32,10 @@ export function Footer() {
               Where Strategy Meets Innovation
             </span>
             <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 leading-snug">
-              Ready to scale your business venture?
+              Ready to scale your business or master future tech?
             </h3>
             <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
-              Partner with VIZ Digital in Zirakpur, Punjab for strategic consulting, modern IT solutions, impactful branding, franchise expansion, and restaurant setup.
+              Partner with VIZ Digital in Zirakpur, Punjab for strategic consulting, high-ROI digital marketing, franchise expansion, and hands-on AI & Robotics Masterclasses with hardware kits.
             </p>
           </div>
 

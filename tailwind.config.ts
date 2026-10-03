@@ -64,7 +64,46 @@ const config: Config = {
 				'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04)',
 				'card': '0 10px 30px -5px rgba(37, 99, 235, 0.06)',
 				'card-hover': '0 20px 35px -5px rgba(37, 99, 235, 0.12)',
-			}
+				'glow-blue': '0 0 25px -5px rgba(37, 99, 235, 0.45)',
+				'glow-amber': '0 0 25px -5px rgba(249, 115, 22, 0.4)',
+				'glow-card': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+			},
+			animation: {
+				'float': 'float 6s ease-in-out infinite',
+				'float-delayed': 'float 6s ease-in-out 3s infinite',
+				'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'marquee': 'marquee 35s linear infinite',
+				'marquee-reverse': 'marquee-reverse 35s linear infinite',
+				'shimmer': 'shimmer 2.5s linear infinite',
+				'star-movement-bottom': 'star-movement-bottom 6s linear infinite alternate',
+				'star-movement-top': 'star-movement-top 6s linear infinite alternate',
+			},
+			keyframes: {
+				float: {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' },
+				},
+				marquee: {
+					'0%': { transform: 'translateX(0%)' },
+					'100%': { transform: 'translateX(-50%)' },
+				},
+				'marquee-reverse': {
+					'0%': { transform: 'translateX(-50%)' },
+					'100%': { transform: 'translateX(0%)' },
+				},
+				shimmer: {
+					'0%': { backgroundPosition: '-200% 0' },
+					'100%': { backgroundPosition: '200% 0' },
+				},
+				'star-movement-bottom': {
+					'0%': { transform: 'translate(0%, 0%)', opacity: '1' },
+					'100%': { transform: 'translate(-100%, 0%)', opacity: '0' },
+				},
+				'star-movement-top': {
+					'0%': { transform: 'translate(0%, 0%)', opacity: '1' },
+					'100%': { transform: 'translate(100%, 0%)', opacity: '0' },
+				},
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

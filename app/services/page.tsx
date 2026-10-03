@@ -14,12 +14,22 @@ import {
   MessageCircle,
   ShieldCheck,
   Compass,
+  Bot,
+  Brain,
+  Boxes,
+  Wrench,
+  Clock,
+  GraduationCap,
+  Award,
+  Zap,
 } from "lucide-react";
+import { SpotlightCard, ShinyText, BlurText } from "@/components/animations";
+import { ConsultingProcess } from "@/components/sections/ConsultingProcess";
 
 export const metadata = {
-  title: "Consulting Services | VIZ Digital",
+  title: "Services & Masterclasses | Digital Marketing, AI Classes & Robotics Labs | VIZ Digital",
   description:
-    "Explore VIZ Digital's consulting solutions: Digital Marketing, Information Technology, Brand Management, Franchise Consultancy, and Restaurant Set-Up Consultancy in Zirakpur, Punjab.",
+    "Explore VIZ Digital's solutions: High-performance Digital Marketing, Artificial Intelligence Classes, Hands-on Robotics Labs with hardware kits, IT Consulting, Brand Management, Franchise & Restaurant Consulting in Zirakpur, Punjab.",
 };
 
 export default function ServicesPage() {
@@ -29,33 +39,52 @@ export default function ServicesPage() {
       <section className="bg-gradient-to-b from-blue-50/60 via-slate-50/40 to-white py-16 sm:py-20 border-b border-slate-100">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center space-y-4">
-            <span className="text-xs font-bold text-blue-700 tracking-wider uppercase bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200">
-              VIZ Digital Services
-            </span>
+            <div className="inline-flex items-center gap-2 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200">
+              <ShinyText
+                text="VIZ Growth & Academy Services"
+                color="#1d4ed8"
+                shineColor="#f97316"
+                speed={3}
+                className="text-xs font-bold tracking-wider uppercase"
+              />
+            </div>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight">
-              Comprehensive Consulting & <span className="text-blue-600">Growth Solutions</span>
+              <BlurText
+                text="Digital Marketing, Business &"
+                delay={60}
+                className="text-slate-900 inline-block mr-2"
+              />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500">
+                AI & Robotics Masterclasses
+              </span>
             </h1>
             <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Tailored consulting shaped around your business goals, connecting strategy, technology, branding, and operations.
+              Tailored growth solutions for businesses and future-ready hands-on tech classes with take-home hardware kits and real agency projects in Zirakpur, Punjab.
             </p>
 
-            {/* Quick jump anchor links */}
-            <div className="pt-6 flex flex-wrap justify-center gap-2">
+            {/* Quick jump anchor links - All Services Equally Highlighted */}
+            <div className="pt-6 flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
               {[
-                { name: "Digital Marketing", href: "#digital-marketing" },
-                { name: "Information Technology", href: "#information-technology" },
-                { name: "Brand Management", href: "#brand-management" },
-                { name: "Franchise Consultancy", href: "#franchise-consultancy" },
-                { name: "Restaurant Set-Up", href: "#restaurant-setup" },
-              ].map((service) => (
-                <a
-                  key={service.name}
-                  href={service.href}
-                  className="text-xs font-semibold px-4 py-2 rounded-full bg-white border border-slate-200 hover:border-blue-400 hover:text-blue-600 shadow-xs transition-colors"
-                >
-                  {service.name}
-                </a>
-              ))}
+                { name: "Digital Marketing", href: "#digital-marketing", icon: TrendingUp },
+                { name: "Restaurant Set-Up", href: "#restaurant-setup", icon: UtensilsCrossed },
+                { name: "Franchise Consultancy", href: "#franchise-consultancy", icon: Store },
+                { name: "Brand Management", href: "#brand-management", icon: Sparkles },
+                { name: "Information Technology", href: "#information-technology", icon: Cpu },
+                { name: "AI Masterclasses", href: "#ai-classes", icon: Brain },
+                { name: "Robotics & Hardware Lab", href: "#robotics-classes", icon: Bot },
+              ].map((service) => {
+                const Icon = service.icon;
+                return (
+                  <a
+                    key={service.name}
+                    href={service.href}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50/50 shadow-xs transition-all"
+                  >
+                    <Icon className="w-3.5 h-3.5 text-blue-600" />
+                    <span>{service.name}</span>
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -106,7 +135,10 @@ export default function ServicesPage() {
               </div>
 
               <div className="lg:col-span-5">
-                <div className="bg-slate-50 rounded-3xl p-8 border border-slate-200 shadow-soft space-y-6">
+                <SpotlightCard
+                  spotlightColor="rgba(37, 99, 235, 0.09)"
+                  className="bg-slate-50 rounded-3xl p-8 border border-slate-200 shadow-soft space-y-6 hover:border-blue-400 hover:shadow-card-hover transition-all duration-300"
+                >
                   <div className="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center">
                     <TrendingUp className="w-6 h-6" />
                   </div>
@@ -120,6 +152,94 @@ export default function ServicesPage() {
                     <p className="font-semibold text-slate-800">Customized Campaign Design</p>
                     <p>Shaped around your specific market, audience profile, and growth targets.</p>
                   </div>
+                </SpotlightCard>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICE 2: Artificial Intelligence (AI) Classes */}
+      <section id="ai-classes" className="py-20 bg-gradient-to-b from-slate-900 via-[#0c152e] to-slate-900 text-white border-b border-slate-800 scroll-mt-20 relative overflow-hidden">
+        <div className="absolute top-10 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid lg:grid-cols-12 gap-10 items-center">
+              <div className="lg:col-span-7 space-y-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/15 border border-purple-400/30 text-purple-300 text-xs font-bold uppercase tracking-wider">
+                  Service 02 • Artificial Intelligence & GenAI
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+                  Artificial Intelligence (AI) Classes & Masterclasses
+                </h2>
+                <p className="text-lg text-purple-200 leading-relaxed font-semibold">
+                  “From Prompt Engineering & Generative AI to Applied Machine Learning with Python.”
+                </p>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  Artificial Intelligence is rewriting modern business and technology. VIZ Tech Academy provides 100% practical, project-driven AI training in Zirakpur, Punjab. Learn to automate workflows, build custom AI agents, generate viral creative assets, and develop machine learning models with industry mentors.
+                </p>
+
+                <div className="space-y-3 pt-2">
+                  {[
+                    "Master ChatGPT-4o, Claude 3.5 Sonnet, Midjourney v6 & DeepSeek",
+                    "Advanced Prompt Engineering (Chain-of-Thought, Zero-Shot, Few-Shot)",
+                    "Applied Machine Learning with Python: NumPy, Pandas, Scikit-learn & PyTorch",
+                    "Build Custom AI Agents, Chatbots & Automated Marketing Workflows",
+                    "Hands-on Capstone Projects & Verified Industry Certification",
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center shrink-0 border border-purple-500/30">
+                        <Check className="w-3 h-3 stroke-[3]" />
+                      </div>
+                      <span className="text-sm font-semibold text-slate-200">{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="pt-4 flex flex-wrap items-center gap-3">
+                  <a
+                    href="https://wa.me/919876687109?text=Hello%20VIZ%20Digital,%20I%20would%20like%20to%20inquire%20about%20the%20AI%20Classes%20and%20book%20a%20Free%20Demo%20Class."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="rounded-xl px-6 py-5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold shadow-lg shadow-purple-600/25 text-xs sm:text-sm flex items-center gap-2">
+                      <MessageCircle className="w-4 h-4" />
+                      <span>Book Free AI Demo Class</span>
+                    </Button>
+                  </a>
+                  <Link href="/contact">
+                    <Button variant="outline" className="rounded-xl px-6 py-5 border-slate-700 hover:border-slate-500 text-slate-200 hover:bg-slate-800 text-xs sm:text-sm font-semibold">
+                      View Batch Timings & Fees
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="lg:col-span-5">
+                <div className="bg-slate-900/90 rounded-3xl p-8 border border-purple-500/30 shadow-2xl space-y-6 relative overflow-hidden backdrop-blur-md">
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-600 text-white flex items-center justify-center shadow-lg">
+                    <Brain className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">
+                    Future-Proof Your Career & Business with AI
+                  </h3>
+                  <p className="text-slate-300 text-sm leading-relaxed">
+                    Designed for students, business owners, digital marketers, and developers looking to harness AI to achieve 10x output and land high-growth tech opportunities.
+                  </p>
+                  <div className="space-y-2 pt-2 border-t border-slate-800 text-xs text-slate-300 font-medium">
+                    <p className="flex items-center gap-2">
+                      <Clock className="w-3.5 h-3.5 text-purple-400" />
+                      Flexible Weekend & Evening Batches
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <GraduationCap className="w-3.5 h-3.5 text-cyan-400" />
+                      Offline Physical Lab in Zirakpur + Online
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <Award className="w-3.5 h-3.5 text-amber-400" />
+                      Recognized Completion Certificate Included
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -127,13 +247,100 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* SERVICE 2: Information Technology */}
+      {/* SERVICE 3: Robotics & STEM Labs */}
+      <section id="robotics-classes" className="py-20 bg-white border-b border-slate-100 scroll-mt-20">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid lg:grid-cols-12 gap-10 items-center">
+              <div className="lg:col-span-5 order-2 lg:order-1">
+                <SpotlightCard
+                  spotlightColor="rgba(6, 182, 212, 0.12)"
+                  className="bg-slate-50 rounded-3xl p-8 border border-slate-200 shadow-soft space-y-6 hover:border-cyan-400 hover:shadow-card-hover transition-all duration-300"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-cyan-600 text-white flex items-center justify-center shadow-md">
+                    <Bot className="w-6 h-6" />
+                  </div>
+                  <div className="inline-block bg-cyan-100 text-cyan-800 text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-md">
+                    Hardware Kit Included
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900">
+                    Real Circuitry & Autonomous Hardware
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    Every student receives their own take-home electronics kit (Arduino, sensors, motor drivers, Bluetooth, and breadboards) to build real working robots.
+                  </p>
+                  <div className="p-4 rounded-2xl bg-white border border-slate-200/80 text-xs text-slate-600 font-medium space-y-1">
+                    <p className="font-bold text-slate-900">Practical STEM Innovation Lab</p>
+                    <p>Located at Motiaz Royal Business Park, Zirakpur. Equipped with test arenas and hardware benches.</p>
+                  </div>
+                </SpotlightCard>
+              </div>
+
+              <div className="lg:col-span-7 space-y-6 order-1 lg:order-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider">
+                  Service 03 • Robotics & Hardware Labs
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                  Hands-on Robotics & STEM Innovation Labs
+                </h2>
+                <p className="text-lg text-cyan-800 leading-relaxed font-semibold">
+                  “Physical Hardware Kits. Real Microcontrollers. Autonomous Machines.”
+                </p>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  We believe true engineering cannot be learned from a textbook alone. In our hands-on Robotics Labs, students solder, wire, program, and test autonomous robots. Programs tailored for school students (ages 8-15), young creators, and engineering graduates in Punjab.
+                </p>
+
+                <div className="space-y-3 pt-2">
+                  {[
+                    "Complete Take-Home Arduino Uno & ESP32 Hardware Kit provided",
+                    "Build Obstacle-Avoiding Robots, Line-Followers & Bluetooth RC Cars",
+                    "Sensor Interfacing: Ultrasonic, Infrared, Gyroscope & OLED Displays",
+                    "Smart Home IoT: Control physical devices over Wi-Fi with custom mobile apps",
+                    "Advanced Drone Tech, Raspberry Pi GPIO & ROS (Robot Operating System)",
+                    "End-of-Course Robot Hackathon with Medals & STEM Certification",
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-cyan-100 text-cyan-700 flex items-center justify-center shrink-0">
+                        <Check className="w-3 h-3 stroke-[3]" />
+                      </div>
+                      <span className="text-sm font-semibold text-slate-800">{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="pt-4 flex flex-wrap items-center gap-3">
+                  <a
+                    href="https://wa.me/919876687109?text=Hello%20VIZ%20Digital,%20I%20would%20like%20to%20enroll%20in%20the%20Robotics%20Lab%20and%20receive%20the%20take-home%20hardware%20kit."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="rounded-xl px-6 py-5 bg-cyan-600 hover:bg-cyan-700 text-white font-semibold shadow-md text-xs sm:text-sm flex items-center gap-2">
+                      <MessageCircle className="w-4 h-4" />
+                      <span>Book Free Robotics Demo</span>
+                    </Button>
+                  </a>
+                  <Link href="/contact">
+                    <Button variant="outline" className="rounded-xl px-6 py-5 border-slate-300 text-slate-800 hover:bg-slate-50 text-xs sm:text-sm font-semibold">
+                      Check Kit Details & Schedule
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICE 4: Information Technology */}
       <section id="information-technology" className="py-20 bg-slate-50/60 border-b border-slate-100 scroll-mt-20">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
             <div className="grid lg:grid-cols-12 gap-10 items-center">
               <div className="lg:col-span-5 order-2 lg:order-1">
-                <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-soft space-y-6">
+                <SpotlightCard
+                  spotlightColor="rgba(79, 70, 229, 0.09)"
+                  className="bg-white rounded-3xl p-8 border border-slate-200 shadow-soft space-y-6 hover:border-indigo-400 hover:shadow-card-hover transition-all duration-300"
+                >
                   <div className="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center">
                     <Cpu className="w-6 h-6" />
                   </div>
@@ -147,12 +354,12 @@ export default function ServicesPage() {
                     <p className="font-semibold text-slate-800">Operational Agility</p>
                     <p>Integrate modern systems that streamline business operations and customer touchpoints.</p>
                   </div>
-                </div>
+                </SpotlightCard>
               </div>
 
               <div className="lg:col-span-7 space-y-6 order-1 lg:order-2">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-bold uppercase tracking-wider">
-                  Service 02 • Technology
+                  Service 04 • Technology
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
                   Information Technology
@@ -199,7 +406,7 @@ export default function ServicesPage() {
           <div className="max-w-5xl mx-auto space-y-12">
             <div className="space-y-4 max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-xs font-bold uppercase tracking-wider">
-                Service 03 • Branding & Experience
+                Service 05 • Branding & Experience
               </div>
               <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900">
                 Brand Management & Branding
@@ -264,7 +471,7 @@ export default function ServicesPage() {
           <div className="max-w-5xl mx-auto space-y-10">
             <div className="space-y-4 max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider">
-                Service 04 • Franchise Expansion
+                Service 06 • Franchise Expansion
               </div>
               <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900">
                 Franchise Consultancy
@@ -320,7 +527,7 @@ export default function ServicesPage() {
           <div className="max-w-5xl mx-auto space-y-10">
             <div className="space-y-4 max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-700 text-xs font-bold uppercase tracking-wider">
-                Service 05 • Hospitality & F&B
+                Service 07 • Hospitality & F&B
               </div>
               <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900">
                 Restaurant Set-Up Consultancy
@@ -384,6 +591,9 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* 4-Stage Consulting Process Roadmap */}
+      <ConsultingProcess />
 
       {/* Bottom Consultation Strip */}
       <section className="py-16 sm:py-20 bg-slate-50">

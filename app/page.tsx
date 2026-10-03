@@ -13,288 +13,212 @@ import {
   Phone,
   MessageCircle,
   ShieldCheck,
-  ChevronRight,
   Building2,
   Rocket,
   Award,
+  Star,
+  Users,
+  Bot,
+  Brain,
 } from "lucide-react";
+import { FrontHero } from "@/components/sections/FrontHero";
+import { BrandMarquee } from "@/components/sections/BrandMarquee";
+import { AllOfferingsShowcase } from "@/components/sections/AllOfferingsShowcase";
+import { HappyFamiliesShowcase } from "@/components/sections/HappyFamiliesShowcase";
+import { AiRoboticsClasses } from "@/components/sections/AiRoboticsClasses";
+import { FAQ } from "@/components/sections/FAQ";
+import { LocationSection } from "@/components/sections/Location";
+import { ConsultingProcess } from "@/components/sections/ConsultingProcess";
+import { SpotlightCard, ShinyText, BlurText } from "@/components/animations";
 
 export const metadata = {
-  title: "VIZ Digital | Where Strategy Meets Innovation",
+  title: "VIZ Digital | Digital Marketing, Restaurant Setup, Franchise & AI Classes | Zirakpur",
   description:
-    "VIZ Digital helps businesses, entrepreneurs, and emerging brands turn ideas into strong, scalable, and sustainable ventures based in Zirakpur, Punjab.",
+    "VIZ Digital is North India's 360° growth engine: High-ROI Digital Marketing, Turnkey Restaurant & Cafe Setup, Franchise Expansion, Luxury Branding, IT Systems, and AI & Robotics Masterclasses in Zirakpur, Punjab.",
 };
 
 export default function Home() {
   const services = [
     {
       id: "digital-marketing",
-      title: "Digital Marketing",
+      title: "Digital Marketing & Performance",
       icon: TrendingUp,
-      badge: "Visibility & Growth",
+      badge: "Lead Gen & Walk-Ins",
       badgeColor: "bg-blue-50 text-blue-700 border-blue-200",
       description:
-        "Strategic marketing solutions that strengthen online visibility, build customer engagement, and support business growth.",
+        "High-performance Meta & Google ad funnels that multiply online visibility, local customer footfall, and measurable revenue ROI.",
       features: [
-        "Strategic online visibility & brand presence",
-        "Targeted customer engagement systems",
-        "Performance-driven growth campaigns",
+        "Hyperlocal targeted customer acquisition campaigns",
+        "Performance marketing & ROI-driven ad management (4.8x avg ROAS)",
+        "Brand reputation & Google Business top ranking",
       ],
       link: "/services#digital-marketing",
     },
     {
-      id: "information-technology",
-      title: "Information Technology",
-      icon: Cpu,
-      badge: "Tech Infrastructure",
-      badgeColor: "bg-indigo-50 text-indigo-700 border-indigo-200",
+      id: "restaurant-setup",
+      title: "Restaurant & Cafe Set-Up Consultancy",
+      icon: UtensilsCrossed,
+      badge: "Concept to Opening Day",
+      badgeColor: "bg-orange-50 text-orange-800 border-orange-200",
       description:
-        "Technology consulting to help businesses choose digital infrastructure, applications, and solutions for efficient operations and long-term scalability.",
+        "Launching a restaurant requires the exact formula: prime location selection, commercial kitchen zoning, chef hiring, and operational SOPs.",
       features: [
-        "Digital infrastructure & software selection",
-        "Enterprise application consulting",
-        "Operational efficiency & scalability",
+        "Location scouting, site feasibility & layout zoning",
+        "Commercial kitchen equipment sourcing & vendor coordination",
+        "Menu engineering, chef trials & grand launch events",
       ],
-      link: "/services#information-technology",
+      link: "/services#restaurant-setup",
+      highlight: "“Transforming empty commercial spaces into packed, profitable restaurants.”",
+    },
+    {
+      id: "franchise-consultancy",
+      title: "Franchise Consultancy & Scaling",
+      icon: Store,
+      badge: "Multi-City Expansion",
+      badgeColor: "bg-amber-50 text-amber-800 border-amber-200",
+      description:
+        "End-to-end franchise blueprinting and management, helping founders scale single-location concepts into 10+ outlet multi-city franchise chains.",
+      features: [
+        "Franchise model design & legal agreement structuring",
+        "Qualified investor lead generation & deal closing",
+        "Franchisee outlet onboarding, auditing & launch SOPs",
+      ],
+      link: "/services#franchise-consultancy",
     },
     {
       id: "brand-management",
       title: "Brand Management & Branding",
       icon: Sparkles,
-      badge: "Memorable Identity",
+      badge: "Premium Visual Identity",
       badgeColor: "bg-purple-50 text-purple-700 border-purple-200",
       description:
-        "We build brands that people remember. Complete customer experience from strategy and identity to promotion, activations, and management.",
+        "We build iconic brands people remember. Comprehensive customer experience from trademark strategy and interior identity to VIP store launches.",
       features: [
-        "Brand strategy, positioning & visual identity",
-        "Influencer & celebrity collaborations",
-        "Store launches & brand activations",
+        "Brand strategy, positioning & luxury visual identity",
+        "Interior design themes & store packaging concepts",
+        "Celebrity & regional influencer store activations",
       ],
       link: "/services#brand-management",
-      highlight: "“We don’t just build brands. We create experiences around them.”",
+      highlight: "“We don’t just build logos. We create unforgettable customer experiences.”",
     },
     {
-      id: "franchise-consultancy",
-      title: "Franchise Consultancy",
-      icon: Store,
-      badge: "Network Expansion",
-      badgeColor: "bg-amber-50 text-amber-800 border-amber-200",
+      id: "information-technology",
+      title: "Information Technology & Systems",
+      icon: Cpu,
+      badge: "Enterprise Tech Stack",
+      badgeColor: "bg-indigo-50 text-indigo-700 border-indigo-200",
       description:
-        "End-to-end franchise consultancy and management, helping brands build franchise networks and convert opportunities into operational outlets.",
+        "End-to-end technology consulting to help family businesses and enterprises choose POS systems, custom software, CRM, and cloud infrastructure.",
       features: [
-        "Franchise lead generation & sales management",
-        "Commercial discussion & agreement support",
-        "Outlet setup, vendor & launch coordination",
+        "Custom web applications & mobile booking platforms",
+        "POS, ERP & inventory automation software",
+        "Enterprise cloud scalability & cybersecurity",
       ],
-      link: "/services#franchise-consultancy",
+      link: "/services#information-technology",
     },
     {
-      id: "restaurant-setup",
-      title: "Restaurant Set-Up Consultancy",
-      icon: UtensilsCrossed,
-      badge: "Concept to Opening Day",
-      badgeColor: "bg-orange-50 text-orange-800 border-orange-200",
+      id: "ai-classes",
+      title: "Artificial Intelligence (AI) Classes",
+      icon: Brain,
+      badge: "GenAI & Prompt Mastery",
+      badgeColor: "bg-purple-50 text-purple-700 border-purple-200",
       description:
-        "Launching a restaurant takes the right concept, location, layout, kitchen, team, systems, and operational planning.",
+        "Practical Artificial Intelligence masterclasses. Learn ChatGPT-4o, Claude 3.5, Prompt Engineering, Python for AI, and real-world business automation.",
       features: [
-        "Concept development & business planning",
-        "Location finalisation & kitchen planning",
-        "Menu engineering, chef hiring & launch SOPs",
+        "Prompt Engineering, LLMs & custom AI agent development",
+        "Machine Learning with Python & Scikit-learn algorithms",
+        "Hands-on project portfolio & certified credentials",
       ],
-      link: "/services#restaurant-setup",
-      highlight: "“We help transform an empty space into a professionally planned, market-ready restaurant.”",
+      link: "/services#ai-classes",
+      highlight: "“Equipping modern learners and businesses with cutting-edge AI capabilities.”",
+    },
+    {
+      id: "robotics-classes",
+      title: "Hands-on Robotics & STEM Labs",
+      icon: Bot,
+      badge: "Hardware Kit Included",
+      badgeColor: "bg-cyan-50 text-cyan-700 border-cyan-200",
+      description:
+        "100% practical robotics engineering. Every student receives a take-home Arduino/ESP32 kit to build obstacle-avoiding bots, IoT, and autonomous rovers.",
+      features: [
+        "Take-home microcontrollers, sensors & motor driver kits",
+        "Arduino, ESP32 IoT & Raspberry Pi robotics programming",
+        "Classes for School Students (Ages 8+), Teens & College Engineers",
+      ],
+      link: "/services#robotics-classes",
+      highlight: "“From breadboards and sensors to autonomous robots built with your own hands.”",
     },
   ];
 
   const whyChooseUs = [
     {
       icon: Compass,
-      title: "Strategic Thinking",
-      description: "We focus on the bigger business picture, aligning every initiative with long-term commercial success.",
+      title: "Strategic Commercial Clarity",
+      description: "We don't do guesswork. Every initiative is backed by financial modeling, competitor analysis, and long-term viability.",
     },
     {
       icon: Layers,
-      title: "Customized Solutions",
-      description: "Recommendations are shaped around each client’s unique requirements, industry, and growth stage.",
+      title: "Turnkey Execution",
+      description: "From government permits and kitchen vendors to software installation and opening day marketing, we handle the heavy lifting.",
     },
     {
       icon: Cpu,
-      title: "Technology-Driven Approach",
-      description: "We connect modern technology with business strategy to ensure streamlined operations and agility.",
+      title: "Modern Tech Integration",
+      description: "We modernize traditional family businesses with automated inventory, cloud POS, and customer loyalty engines.",
     },
     {
       icon: Rocket,
-      title: "End-to-End Perspective",
-      description: "We support businesses from concept and branding to marketing, technology, and expansion.",
+      title: "Proven Franchise Scaling",
+      description: "We specialize in taking regional hits and expanding them into 10+ franchise outlet chains across North India.",
     },
   ];
 
   return (
-    <div className="flex flex-col min-h-screen pt-16 sm:pt-20 overflow-x-hidden w-full max-w-full">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-blue-50/50 via-white to-white py-12 sm:py-24 border-b border-slate-100 w-full max-w-full">
-        {/* Subtle geometric background elements */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full overflow-hidden pointer-events-none -z-10">
-          <div className="absolute -top-24 right-10 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl opacity-70" />
-          <div className="absolute top-1/2 -left-20 w-80 h-80 bg-orange-100/40 rounded-full blur-3xl opacity-60" />
-        </div>
+    <div className="flex flex-col min-h-screen overflow-x-hidden w-full max-w-full">
+      {/* Dynamic Front Hero with 1,000+ Happy Families */}
+      <FrontHero />
 
-        <div className="container mx-auto px-4 sm:px-6 w-full max-w-full">
-          <div className="max-w-4xl mx-auto text-center space-y-5 sm:space-y-6">
-            {/* Location & Sector Tag */}
-            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 shadow-xs max-w-full">
-              <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse shrink-0" />
-              <span className="text-[11px] sm:text-xs font-semibold text-blue-900 tracking-wide uppercase text-center truncate">
-                VIZ Digital • Business Consulting • Zirakpur, Punjab
-              </span>
-            </div>
+      {/* Infinite Brand Marquee */}
+      <BrandMarquee />
 
-            {/* Main Headline */}
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-              Where Strategy{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600">
-                Meets Innovation.
-              </span>
-            </h1>
+      {/* Core Consulting & Growth Services Section - Prominently Placed First */}
+      <section id="core-services" className="py-20 sm:py-28 bg-white border-y border-slate-100 relative overflow-hidden scroll-mt-20">
+        <div className="absolute top-1/2 right-0 w-80 h-80 bg-blue-50 rounded-full blur-3xl pointer-events-none -z-10" />
 
-            {/* Supporting Text */}
-            <p className="text-base sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal px-2">
-              VIZ Digital helps businesses, entrepreneurs, and emerging brands turn ideas into strong, scalable, and sustainable ventures.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-md mx-auto sm:max-w-none">
-              <Link href="/services" className="w-full sm:w-auto">
-                <Button
-                  size="lg"
-                  className="w-full sm:w-auto rounded-xl px-7 py-6 text-base font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/25 transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2"
-                >
-                  <span>Explore Our Services</span>
-                  <ArrowRight className="w-5 h-5" />
-                </Button>
-              </Link>
-              <Link href="/contact" className="w-full sm:w-auto">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto rounded-xl px-7 py-6 text-base font-semibold border-slate-300 text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-all duration-200"
-                >
-                  <span>Contact Us</span>
-                </Button>
-              </Link>
-            </div>
-
-            {/* Core Value Pillars Badge Strip */}
-            <div className="pt-8 sm:pt-10 border-t border-slate-200/70 max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 text-left">
-              {[
-                "Strategic Thinking",
-                "Customized Solutions",
-                "Technology-Driven",
-                "End-to-End Support",
-              ].map((pill, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-center gap-2 p-2.5 rounded-lg bg-white/80 border border-slate-200/60 text-xs font-semibold text-slate-700 shadow-xs overflow-hidden"
-                >
-                  <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
-                  <span className="truncate">{pill}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About VIZ Digital Snapshot Section */}
-      <section className="py-20 bg-white border-b border-slate-100">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-12 gap-12 items-center max-w-6xl mx-auto">
-            {/* Left Content */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-700 text-xs font-bold uppercase tracking-wider">
-                About VIZ Digital
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
-                Empowering Businesses to Transform Ideas into Sustainable Ventures
-              </h2>
-              <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-                Success requires more than a good idea. It requires the right strategy, technology, branding, marketing, and execution. VIZ Digital brings these elements together to provide consulting tailored to each client’s business goals.
-              </p>
-              <p className="text-slate-600 text-base leading-relaxed">
-                Our approach begins with understanding each client’s vision, challenges, market, and objectives. We combine business strategy, creative thinking, technology, and market understanding to develop practical solutions.
-              </p>
-
-              <div className="pt-2 flex flex-wrap gap-4">
-                <Link href="/about">
-                  <Button
-                    variant="outline"
-                    className="rounded-xl px-6 py-5 font-semibold border-blue-200 text-blue-700 hover:bg-blue-50 flex items-center gap-2"
-                  >
-                    <span>Read Our Story & Approach</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
-                </Link>
-                <Link href="/clients">
-                  <Button
-                    variant="ghost"
-                    className="rounded-xl px-5 py-5 font-semibold text-slate-600 hover:text-slate-900"
-                  >
-                    View Our Clients Page
-                  </Button>
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Card / Quote */}
-            <div className="lg:col-span-5">
-              <div className="bg-gradient-to-br from-blue-50 via-slate-50 to-orange-50/40 p-8 rounded-3xl border border-slate-200/80 shadow-soft space-y-6">
-                <div className="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-600/30">
-                  <Building2 className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900">
-                  Based in Zirakpur, Punjab
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Headquartered in Zirakpur, VIZ Digital serves businesses, entrepreneurs, and emerging brands locally and across regional markets with hands-on consulting and actionable growth advisory.
-                </p>
-                <div className="p-4 bg-white rounded-2xl border border-slate-200 text-slate-800 text-sm italic font-medium shadow-xs">
-                  “Your vision. Our expertise. A smarter path to growth.”
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-20 sm:py-24 bg-slate-50/70 border-b border-slate-200">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
-            <span className="text-xs font-bold text-blue-700 tracking-wider uppercase bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200/80">
-              Tailored Solutions
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-              Our Core Consulting Services
+            <div className="inline-flex items-center gap-2 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200/80">
+              <ShinyText
+                text="Complete Growth & Innovation Architecture"
+                color="#1d4ed8"
+                shineColor="#f97316"
+                speed={3}
+                className="text-xs font-bold tracking-wider uppercase"
+              />
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+              What We Provide: Core Growth & Tech Solutions
             </h2>
-            <p className="text-slate-600 text-base sm:text-lg">
-              Explore how VIZ Digital provides end-to-end guidance across marketing, technology, brand management, franchise growth, and restaurant setups.
+            <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">
+              From launching turnkey cafes and building multi-city franchise networks to high-ROI digital marketing, branding, IT, and hands-on AI & Robotics masterclasses.
             </p>
           </div>
 
           {/* Service Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => {
               const Icon = service.icon;
               return (
-                <div
+                <SpotlightCard
                   key={service.id}
-                  className="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-soft hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
+                  spotlightColor="rgba(37, 99, 235, 0.09)"
+                  className="bg-white rounded-3xl p-7 sm:p-8 border border-slate-200/90 shadow-soft hover:shadow-card-hover hover:border-blue-400 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 h-full"
                 >
                   <div className="space-y-5">
                     {/* Header with Icon and Badge */}
                     <div className="flex items-center justify-between">
                       <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-xs">
-                        <Icon className="w-7 h-7" />
+                        <Icon className="w-7 h-7 stroke-[1.8]" />
                       </div>
                       <span
                         className={`text-xs font-bold px-3 py-1 rounded-full border ${service.badgeColor}`}
@@ -313,12 +237,12 @@ export default function Home() {
                       {service.description}
                     </p>
 
-                    {/* Key points */}
-                    <ul className="space-y-2.5 pt-2 border-t border-slate-100">
+                    {/* Features list */}
+                    <ul className="space-y-2.5 pt-3 border-t border-slate-100">
                       {service.features.map((feature, i) => (
                         <li
                           key={i}
-                          className="flex items-start gap-2.5 text-xs font-medium text-slate-700"
+                          className="flex items-start gap-2.5 text-xs font-semibold text-slate-700"
                         >
                           <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                           <span>{feature}</span>
@@ -327,7 +251,7 @@ export default function Home() {
                     </ul>
 
                     {service.highlight && (
-                      <p className="text-xs font-semibold text-orange-700 bg-orange-50/80 p-3 rounded-xl border border-orange-200/60 italic">
+                      <p className="text-xs font-semibold text-orange-800 bg-orange-50/90 p-3 rounded-xl border border-orange-200/80 italic">
                         {service.highlight}
                       </p>
                     )}
@@ -339,37 +263,48 @@ export default function Home() {
                       href={service.link}
                       className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group-hover:translate-x-1 duration-200"
                     >
-                      <span>Explore Details</span>
+                      <span>Explore Service Roadmap</span>
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
-                </div>
+                </SpotlightCard>
               );
             })}
 
-            {/* 6th Card: Direct Consultation Card */}
-            <div className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-3xl p-8 shadow-card flex flex-col justify-between">
-              <div className="space-y-5">
-                <span className="text-xs font-bold uppercase tracking-wider bg-white/20 text-white px-3 py-1 rounded-full inline-block">
-                  Have a specific goal?
+            {/* Custom Advisory Highlight Card */}
+            <div className="bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 text-white rounded-3xl p-8 shadow-xl flex flex-col justify-between relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
+
+              <div className="space-y-5 relative z-10">
+                <span className="text-xs font-bold uppercase tracking-wider bg-white/15 text-blue-200 px-3.5 py-1 rounded-full inline-block border border-white/10">
+                  Custom Strategic Advisory
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-bold text-white">
-                  Custom Consulting Tailored to Your Growth
+                  Have an Ambitious Business Vision?
                 </h3>
-                <p className="text-blue-100 text-sm leading-relaxed">
-                  Every business is unique. We customize strategies for entrepreneurs, established enterprises, and growing franchise concepts.
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  Every business is unique. We tailor our consulting scope to your stage — whether starting from scratch, fixing operational leaks, or preparing for high-speed franchise rollout.
                 </p>
-                <div className="space-y-2 text-xs text-blue-100 pt-2">
-                  <p>✓ Direct advisory from experienced consultants</p>
-                  <p>✓ Transparent process from concept to execution</p>
-                  <p>✓ Scalable systems designed for long-term viability</p>
+                <div className="space-y-2 text-xs text-slate-200 pt-2 font-medium">
+                  <p className="flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                    Direct advisory with senior leadership
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                    Transparent milestones & actionable SOPs
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                    Dedicated local team based in Zirakpur
+                  </p>
                 </div>
               </div>
 
-              <div className="pt-8">
+              <div className="pt-8 relative z-10">
                 <Link href="/contact" className="block w-full">
-                  <Button className="w-full bg-white text-blue-700 hover:bg-blue-50 font-bold py-6 rounded-xl shadow-md transition-all">
-                    Schedule a Meeting
+                  <Button className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-6 rounded-2xl shadow-lg shadow-blue-600/30 transition-all text-sm">
+                    Schedule Free Discovery Call
                   </Button>
                 </Link>
               </div>
@@ -378,88 +313,85 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Interactive Complete Solutions Blueprint - All 6 Core Pillars Deep-Dive */}
+      <AllOfferingsShowcase />
+
+      {/* Real Commercial Transformations & 1,000+ Happy Customer Families */}
+      <HappyFamiliesShowcase />
+
+      {/* Hands-On AI & Robotics Academy Section */}
+      <AiRoboticsClasses />
+
+      {/* 4-Step Consulting Process Roadmap */}
+      <ConsultingProcess />
+
       {/* Why VIZ Digital Section */}
-      <section className="py-20 sm:py-24 bg-white border-b border-slate-100">
-        <div className="container mx-auto px-4 sm:px-6">
+      <section className="py-20 sm:py-24 bg-slate-50/70 border-b border-slate-200">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
             <span className="text-xs font-bold text-orange-700 tracking-wider uppercase bg-orange-50 px-3.5 py-1.5 rounded-full border border-orange-200">
               Why Partner With Us
             </span>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-              Why VIZ Digital
+              Why 1,000+ Founders Choose VIZ Digital
             </h2>
             <p className="text-slate-600 text-base sm:text-lg">
-              We bring strategy, technology, branding, and execution together under one roof.
+              We merge commercial strategy, technology, branding, and local operational execution under one unified umbrella.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {whyChooseUs.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div
+                <SpotlightCard
                   key={idx}
-                  className="bg-slate-50 rounded-2xl p-7 border border-slate-200/80 hover:bg-white hover:shadow-soft transition-all duration-300 space-y-4"
+                  spotlightColor="rgba(249, 115, 22, 0.08)"
+                  className="bg-white rounded-3xl p-7 border border-slate-200/80 hover:shadow-card-hover hover:border-blue-300 transition-all duration-300 space-y-4 group h-full"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
-                    <Icon className="w-6 h-6" />
+                  <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-xs">
+                    <Icon className="w-6 h-6 stroke-[1.8]" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
+                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    {item.title}
+                  </h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
                     {item.description}
                   </p>
-                </div>
+                </SpotlightCard>
               );
             })}
           </div>
 
-          {/* Prominent Closing Line Quote */}
-          <div className="mt-16 max-w-4xl mx-auto bg-gradient-to-r from-blue-50 via-white to-orange-50 p-8 rounded-3xl border border-blue-100 text-center shadow-soft">
-            <p className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">
-              “Your vision. Our expertise. A smarter path to growth.”
+          {/* Prominent Quote Card */}
+          <div className="mt-16 max-w-4xl mx-auto bg-gradient-to-r from-blue-50 via-white to-orange-50 p-8 sm:p-10 rounded-3xl border border-blue-200/70 text-center shadow-soft space-y-2">
+            <p className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+              “Your vision. Our expertise. A smarter path to commercial growth.”
             </p>
-            <p className="text-sm text-slate-500 font-medium">
-              VIZ Digital • Based in Zirakpur, Punjab
+            <p className="text-xs sm:text-sm text-slate-500 font-semibold uppercase tracking-wider">
+              VIZ Digital • Headquartered in Zirakpur, Punjab • Serving Emerging Brands
             </p>
           </div>
         </div>
       </section>
 
-      {/* Our Clients Teaser Section */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <span className="text-xs font-bold text-blue-700 tracking-wider uppercase bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200">
-              Client & Brand Partnerships
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
-              Dedicated Support for Emerging Brands & Entrepreneurs
-            </h2>
-            <p className="text-slate-600 text-base leading-relaxed max-w-2xl mx-auto">
-              We collaborate with businesses, entrepreneurs, and emerging brands to build strong foundations, scale franchise networks, and launch market-ready concepts.
-            </p>
+      {/* Frequently Asked Questions */}
+      <FAQ />
 
-            <div className="pt-2">
-              <Link href="/clients">
-                <Button className="rounded-xl px-7 py-6 text-sm font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-md">
-                  <span>Visit Our Clients Page</span>
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Corporate Location & Headquarters */}
+      <LocationSection />
 
       {/* Bottom CTA Banner */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-5xl mx-auto bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 rounded-3xl p-8 sm:p-14 text-white shadow-xl relative overflow-hidden">
+      <section className="py-20 sm:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+          <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 rounded-3xl p-8 sm:p-14 text-white shadow-2xl relative overflow-hidden">
+            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+
             <div className="relative z-10 space-y-6 max-w-2xl">
               <span className="text-xs font-bold uppercase tracking-wider bg-white/20 px-3.5 py-1.5 rounded-full inline-block">
                 Start Your Journey With VIZ Digital
               </span>
-              <h2 className="text-3xl sm:text-5xl font-extrabold leading-tight">
+              <h2 className="text-3xl sm:text-5xl font-black leading-tight">
                 Turn your business ideas into scalable reality.
               </h2>
               <p className="text-blue-100 text-base sm:text-lg leading-relaxed">
@@ -470,14 +402,14 @@ export default function Home() {
                 <Link href="/contact">
                   <Button
                     size="lg"
-                    className="bg-white text-blue-700 hover:bg-blue-50 font-bold px-8 py-6 rounded-xl shadow-md text-base"
+                    className="bg-white text-blue-700 hover:bg-blue-50 font-bold px-8 py-6 rounded-2xl shadow-md text-base"
                   >
                     Contact Us Today
                   </Button>
                 </Link>
                 <a
                   href="tel:9876687109"
-                  className="inline-flex items-center gap-2 bg-blue-500/30 hover:bg-blue-500/40 text-white border border-white/20 font-semibold px-6 py-3.5 rounded-xl transition-colors text-sm"
+                  className="inline-flex items-center gap-2 bg-blue-500/30 hover:bg-blue-500/40 text-white border border-white/20 font-semibold px-6 py-3.5 rounded-2xl transition-colors text-sm"
                 >
                   <Phone className="w-4 h-4" />
                   <span>Call: 98766 87109</span>

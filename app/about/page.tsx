@@ -13,6 +13,7 @@ import {
   ShieldCheck,
   Lightbulb,
 } from "lucide-react";
+import { SpotlightCard, ShinyText, BlurText } from "@/components/animations";
 
 export const metadata = {
   title: "About Us | VIZ Digital - Business Consulting & Growth Solutions",
@@ -54,11 +55,24 @@ export default function AboutPage() {
       <section className="bg-gradient-to-b from-blue-50/60 via-slate-50/40 to-white py-16 sm:py-20 border-b border-slate-100">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center space-y-4">
-            <span className="text-xs font-bold text-blue-700 tracking-wider uppercase bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200">
-              About VIZ Digital
-            </span>
+            <div className="inline-flex items-center gap-2 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200">
+              <ShinyText
+                text="About VIZ Digital"
+                color="#1d4ed8"
+                shineColor="#f97316"
+                speed={3}
+                className="text-xs font-bold tracking-wider uppercase"
+              />
+            </div>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight">
-              A Smarter Path to <span className="text-blue-600">Business Growth</span>
+              <BlurText
+                text="A Smarter Path to"
+                delay={60}
+                className="text-slate-900 inline-block mr-2"
+              />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-orange-500">
+                Business Growth
+              </span>
             </h1>
             <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
               Based in Zirakpur, Punjab, VIZ Digital bridges the gap between ambitious business vision and practical commercial execution.
@@ -87,7 +101,10 @@ export default function AboutPage() {
             {/* Approach and Vision Grid */}
             <div className="grid md:grid-cols-2 gap-8">
               {/* Our Approach */}
-              <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-soft space-y-5">
+              <SpotlightCard
+                spotlightColor="rgba(37, 99, 235, 0.08)"
+                className="bg-white rounded-3xl p-8 border border-slate-200 shadow-soft space-y-5 hover:border-blue-400 hover:shadow-card-hover transition-all duration-300"
+              >
                 <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
                   <Target className="w-6 h-6" />
                 </div>
@@ -95,10 +112,13 @@ export default function AboutPage() {
                 <p className="text-slate-600 text-base leading-relaxed">
                   Our approach begins with understanding each client’s vision, challenges, market, and objectives. We combine business strategy, creative thinking, technology, and market understanding to develop practical solutions.
                 </p>
-              </div>
+              </SpotlightCard>
 
               {/* Our Vision */}
-              <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-soft space-y-5">
+              <SpotlightCard
+                spotlightColor="rgba(249, 115, 22, 0.08)"
+                className="bg-white rounded-3xl p-8 border border-slate-200 shadow-soft space-y-5 hover:border-orange-400 hover:shadow-card-hover transition-all duration-300"
+              >
                 <div className="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center">
                   <Eye className="w-6 h-6" />
                 </div>
@@ -106,7 +126,7 @@ export default function AboutPage() {
                 <p className="text-slate-600 text-base leading-relaxed">
                   Our vision is to become a trusted consulting partner for businesses and entrepreneurs by delivering innovative strategies, premium solutions, and meaningful business value.
                 </p>
-              </div>
+              </SpotlightCard>
             </div>
           </div>
         </div>
@@ -132,9 +152,10 @@ export default function AboutPage() {
               {whyPoints.map((item, idx) => {
                 const Icon = item.icon;
                 return (
-                  <div
+                  <SpotlightCard
                     key={idx}
-                    className="bg-white rounded-2xl p-7 border border-slate-200 shadow-soft space-y-4 hover:border-blue-300 transition-colors"
+                    spotlightColor="rgba(37, 99, 235, 0.08)"
+                    className="bg-white rounded-2xl p-7 border border-slate-200 shadow-soft space-y-4 hover:border-blue-300 transition-all duration-300"
                   >
                     <div className="flex items-center justify-between">
                       <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
@@ -148,7 +169,7 @@ export default function AboutPage() {
                     <p className="text-slate-600 text-sm leading-relaxed">
                       {item.description}
                     </p>
-                  </div>
+                  </SpotlightCard>
                 );
               })}
             </div>

@@ -51,19 +51,66 @@
 @layer utilities {
   .bg-subtle-pattern {
     background-color: #ffffff;
-    background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+    background-image: radial-gradient(#e2e8f0 1.2px, transparent 1.2px);
     background-size: 24px 24px;
   }
 
+  .bg-mesh-dark {
+    background: radial-gradient(circle at 15% 15%, rgba(37, 99, 235, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(249, 115, 22, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.06) 0%, transparent 50%),
+                #ffffff;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+  }
+
+  .glass-card-dark {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-card-hover {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glass-card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.15);
+    border-color: rgba(59, 130, 246, 0.4);
+  }
+
   .text-gradient-blue {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-600;
   }
 
   .text-gradient-accent {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-blue-500 to-orange-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-500 to-orange-500;
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-600;
   }
 
   .card-hover-effect {
     @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover;
+  }
+
+  .animated-gradient-border {
+    position: relative;
+    background: linear-gradient(60deg, #3b82f6, #6366f1, #f97316, #3b82f6);
+    background-size: 300% 300%;
+    animation: gradientBorder 6s ease infinite;
+  }
+
+  @keyframes gradientBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 }
