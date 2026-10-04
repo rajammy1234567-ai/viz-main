@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -137,20 +138,41 @@ export default function ServicesPage() {
               <div className="lg:col-span-5">
                 <SpotlightCard
                   spotlightColor="rgba(37, 99, 235, 0.09)"
-                  className="bg-slate-50 rounded-3xl p-8 border border-slate-200 shadow-soft space-y-6 hover:border-blue-400 hover:shadow-card-hover transition-all duration-300"
+                  className="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 shadow-soft hover:border-blue-400 hover:shadow-card-hover transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center">
-                    <TrendingUp className="w-6 h-6" />
+                  <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-200">
+                    <Image
+                      src="/images/services/digital-marketing.jpg"
+                      alt="Digital Marketing Operations & Live Funnels"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                    <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-blue-600/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm backdrop-blur-sm">
+                      <span>4.8x Avg ROAS</span>
+                    </div>
+                    <div className="absolute bottom-3 left-3 text-xs font-semibold text-white/95 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-lg">
+                      Performance Marketing Operations
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900">
-                    Visibility That Generates Real Value
-                  </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    Designed for businesses and emerging brands seeking predictable, measurable digital visibility that turns impressions into long-term commercial relationships.
-                  </p>
-                  <div className="p-4 rounded-2xl bg-white border border-slate-200/80 text-xs text-slate-500 font-medium space-y-1">
-                    <p className="font-semibold text-slate-800">Customized Campaign Design</p>
-                    <p>Shaped around your specific market, audience profile, and growth targets.</p>
+
+                  <div className="p-6 sm:p-7 space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+                        <TrendingUp className="w-5 h-5" />
+                      </div>
+                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug">
+                        Visibility That Generates Real Value
+                      </h3>
+                    </div>
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                      Designed for businesses and emerging brands seeking predictable, measurable digital visibility that turns impressions into long-term commercial relationships.
+                    </p>
+                    <div className="p-3.5 rounded-xl bg-white border border-slate-200/80 text-xs text-slate-600 font-medium space-y-1">
+                      <p className="font-bold text-slate-900">Customized Campaign Architecture</p>
+                      <p className="text-[11px] text-slate-500">Shaped around your specific market, audience profile, and customer footfall targets.</p>
+                    </div>
                   </div>
                 </SpotlightCard>
               </div>
@@ -216,29 +238,50 @@ export default function ServicesPage() {
               </div>
 
               <div className="lg:col-span-5">
-                <div className="bg-slate-900/90 rounded-3xl p-8 border border-purple-500/30 shadow-2xl space-y-6 relative overflow-hidden backdrop-blur-md">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-600 text-white flex items-center justify-center shadow-lg">
-                    <Brain className="w-6 h-6" />
+                <div className="bg-slate-900/90 rounded-3xl overflow-hidden border border-purple-500/30 shadow-2xl relative backdrop-blur-md">
+                  <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-950">
+                    <Image
+                      src="/images/services/ai-classes.jpg"
+                      alt="Artificial Intelligence Masterclass Lab"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                    <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-purple-600/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm backdrop-blur-sm">
+                      <span>Hands-on AI Lab</span>
+                    </div>
+                    <div className="absolute bottom-3 left-3 text-xs font-semibold text-white/95 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-lg">
+                      GenAI & Prompt Engineering Masterclass
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-white">
-                    Future-Proof Your Career & Business with AI
-                  </h3>
-                  <p className="text-slate-300 text-sm leading-relaxed">
-                    Designed for students, business owners, digital marketers, and developers looking to harness AI to achieve 10x output and land high-growth tech opportunities.
-                  </p>
-                  <div className="space-y-2 pt-2 border-t border-slate-800 text-xs text-slate-300 font-medium">
-                    <p className="flex items-center gap-2">
-                      <Clock className="w-3.5 h-3.5 text-purple-400" />
-                      Flexible Weekend & Evening Batches
+
+                  <div className="p-6 sm:p-7 space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-600 text-white flex items-center justify-center shadow-lg shrink-0">
+                        <Brain className="w-5 h-5" />
+                      </div>
+                      <h3 className="text-lg sm:text-xl font-bold text-white leading-snug">
+                        Future-Proof Your Career & Business
+                      </h3>
+                    </div>
+                    <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                      Designed for students, business owners, digital marketers, and developers looking to harness AI to achieve 10x output and land high-growth tech opportunities.
                     </p>
-                    <p className="flex items-center gap-2">
-                      <GraduationCap className="w-3.5 h-3.5 text-cyan-400" />
-                      Offline Physical Lab in Zirakpur + Online
-                    </p>
-                    <p className="flex items-center gap-2">
-                      <Award className="w-3.5 h-3.5 text-amber-400" />
-                      Recognized Completion Certificate Included
-                    </p>
+                    <div className="space-y-2 pt-2 border-t border-slate-800 text-xs text-slate-300 font-medium">
+                      <p className="flex items-center gap-2">
+                        <Clock className="w-3.5 h-3.5 text-purple-400" />
+                        Flexible Weekend & Evening Batches
+                      </p>
+                      <p className="flex items-center gap-2">
+                        <GraduationCap className="w-3.5 h-3.5 text-cyan-400" />
+                        Offline Physical Lab in Zirakpur + Online
+                      </p>
+                      <p className="flex items-center gap-2">
+                        <Award className="w-3.5 h-3.5 text-amber-400" />
+                        Recognized Completion Certificate Included
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -255,23 +298,41 @@ export default function ServicesPage() {
               <div className="lg:col-span-5 order-2 lg:order-1">
                 <SpotlightCard
                   spotlightColor="rgba(6, 182, 212, 0.12)"
-                  className="bg-slate-50 rounded-3xl p-8 border border-slate-200 shadow-soft space-y-6 hover:border-cyan-400 hover:shadow-card-hover transition-all duration-300"
+                  className="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 shadow-soft hover:border-cyan-400 hover:shadow-card-hover transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-cyan-600 text-white flex items-center justify-center shadow-md">
-                    <Bot className="w-6 h-6" />
+                  <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-200">
+                    <Image
+                      src="/images/services/robotics-classes.jpg"
+                      alt="Hands-on Robotics Hardware Lab"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                    <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-cyan-600/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm backdrop-blur-sm">
+                      <span>⚡ Hardware Kit Included</span>
+                    </div>
+                    <div className="absolute bottom-3 left-3 text-xs font-semibold text-white/95 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-lg">
+                      Physical Arduino & Autonomous Rovers
+                    </div>
                   </div>
-                  <div className="inline-block bg-cyan-100 text-cyan-800 text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-md">
-                    Hardware Kit Included
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900">
-                    Real Circuitry & Autonomous Hardware
-                  </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    Every student receives their own take-home electronics kit (Arduino, sensors, motor drivers, Bluetooth, and breadboards) to build real working robots.
-                  </p>
-                  <div className="p-4 rounded-2xl bg-white border border-slate-200/80 text-xs text-slate-600 font-medium space-y-1">
-                    <p className="font-bold text-slate-900">Practical STEM Innovation Lab</p>
-                    <p>Located at Motiaz Royal Business Park, Zirakpur. Equipped with test arenas and hardware benches.</p>
+
+                  <div className="p-6 sm:p-7 space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-cyan-600 text-white flex items-center justify-center shadow-md shrink-0">
+                        <Bot className="w-5 h-5" />
+                      </div>
+                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug">
+                        Real Circuitry & Autonomous Hardware
+                      </h3>
+                    </div>
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                      Every student receives their own take-home electronics kit (Arduino, sensors, motor drivers, Bluetooth, and breadboards) to build real working robots.
+                    </p>
+                    <div className="p-3.5 rounded-xl bg-white border border-slate-200/80 text-xs text-slate-600 font-medium space-y-1">
+                      <p className="font-bold text-slate-900">Practical STEM Innovation Lab</p>
+                      <p className="text-[11px] text-slate-500">Located at Motiaz Royal Business Park, Zirakpur. Equipped with test arenas and hardware benches.</p>
+                    </div>
                   </div>
                 </SpotlightCard>
               </div>
@@ -339,20 +400,41 @@ export default function ServicesPage() {
               <div className="lg:col-span-5 order-2 lg:order-1">
                 <SpotlightCard
                   spotlightColor="rgba(79, 70, 229, 0.09)"
-                  className="bg-white rounded-3xl p-8 border border-slate-200 shadow-soft space-y-6 hover:border-indigo-400 hover:shadow-card-hover transition-all duration-300"
+                  className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-soft hover:border-indigo-400 hover:shadow-card-hover transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center">
-                    <Cpu className="w-6 h-6" />
+                  <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-100">
+                    <Image
+                      src="/images/services/information-technology.jpg"
+                      alt="Modern Cloud POS & IT Systems"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                    <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-indigo-600/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm backdrop-blur-sm">
+                      <span>Enterprise Tech Stack</span>
+                    </div>
+                    <div className="absolute bottom-3 left-3 text-xs font-semibold text-white/95 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-lg">
+                      Cloud POS & Multi-Outlet Live Sync
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900">
-                    Scalable Digital Infrastructure
-                  </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    Selecting and adopting the right technology tools prevents costly rework. We assist you in matching modern digital architecture to current operational needs and future scale.
-                  </p>
-                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-500 font-medium space-y-1">
-                    <p className="font-semibold text-slate-800">Operational Agility</p>
-                    <p>Integrate modern systems that streamline business operations and customer touchpoints.</p>
+
+                  <div className="p-6 sm:p-7 space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+                        <Cpu className="w-5 h-5" />
+                      </div>
+                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-snug">
+                        Scalable Digital Infrastructure
+                      </h3>
+                    </div>
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                      Selecting and adopting the right technology tools prevents costly rework. We assist you in matching modern digital architecture to current operational needs and future scale.
+                    </p>
+                    <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-500 font-medium space-y-1">
+                      <p className="font-semibold text-slate-800">Operational Agility</p>
+                      <p className="text-[11px] text-slate-500">Integrate modern systems that streamline business operations and customer touchpoints.</p>
+                    </div>
                   </div>
                 </SpotlightCard>
               </div>
@@ -400,23 +482,43 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* SERVICE 3: Brand Management & Branding */}
+      {/* SERVICE 5: Brand Management & Branding */}
       <section id="brand-management" className="py-20 bg-white border-b border-slate-100 scroll-mt-20">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-5xl mx-auto space-y-12">
-            <div className="space-y-4 max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-xs font-bold uppercase tracking-wider">
-                Service 05 • Branding & Experience
+          <div className="max-w-5xl mx-auto space-y-10">
+            <div className="grid lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-7 space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-xs font-bold uppercase tracking-wider">
+                  Service 05 • Branding & Experience
+                </div>
+                <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900">
+                  Brand Management & Branding
+                </h2>
+                <p className="text-xl font-bold text-purple-700">
+                  “We build brands that people remember.”
+                </p>
+                <p className="text-slate-700 text-base sm:text-lg leading-relaxed">
+                  Branding is more than a logo. It includes the complete customer experience, from brand strategy and identity to promotion, launches, activations, and ongoing management.
+                </p>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900">
-                Brand Management & Branding
-              </h2>
-              <p className="text-xl font-bold text-purple-700">
-                “We build brands that people remember.”
-              </p>
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed">
-                Branding is more than a logo. It includes the complete customer experience, from brand strategy and identity to promotion, launches, activations, and ongoing management.
-              </p>
+              <div className="lg:col-span-5 relative w-full">
+                <div className="relative h-56 sm:h-64 w-full rounded-3xl overflow-hidden border border-purple-200 shadow-xl group bg-purple-50">
+                  <Image
+                    src="/images/services/brand-management.jpg"
+                    alt="Luxury Brand Identity & Packaging Studio"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                  <div className="absolute top-3 left-3 bg-purple-600/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm">
+                    Luxury Visual Identity
+                  </div>
+                  <div className="absolute bottom-3 left-3 right-3 text-xs font-semibold text-white/95 bg-black/60 backdrop-blur-md p-2 rounded-xl">
+                    Packaging Design & Brand Architecture
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Checklist of Brand Services */}
@@ -465,22 +567,42 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* SERVICE 4: Franchise Consultancy */}
+      {/* SERVICE 6: Franchise Consultancy */}
       <section id="franchise-consultancy" className="py-20 bg-slate-50/70 border-b border-slate-200 scroll-mt-20">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-5xl mx-auto space-y-10">
-            <div className="space-y-4 max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider">
-                Service 06 • Franchise Expansion
+            <div className="grid lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-7 space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider">
+                  Service 06 • Franchise Expansion
+                </div>
+                <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900">
+                  Franchise Consultancy & Scaling
+                </h2>
+                <p className="text-lg text-slate-700 leading-relaxed font-medium">
+                  VIZ Digital provides end-to-end franchise consultancy and management, helping brands build franchise networks and convert opportunities into operational outlets.
+                </p>
+                <div className="p-4 bg-white rounded-2xl border border-amber-200 text-amber-900 text-sm font-semibold">
+                  End-to-End Journey: Support from the first franchise enquiry through agreement, outlet setup, opening, and operational launch.
+                </div>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900">
-                Franchise Consultancy
-              </h2>
-              <p className="text-lg text-slate-700 leading-relaxed font-medium">
-                VIZ Digital provides end-to-end franchise consultancy and management, helping brands build franchise networks and convert opportunities into operational outlets.
-              </p>
-              <div className="p-4 bg-white rounded-2xl border border-amber-200 text-amber-900 text-sm font-semibold">
-                End-to-End Journey: Support from the first franchise enquiry through agreement, outlet setup, opening, and operational launch.
+              <div className="lg:col-span-5 relative w-full">
+                <div className="relative h-56 sm:h-64 w-full rounded-3xl overflow-hidden border border-amber-200 shadow-xl group bg-amber-50">
+                  <Image
+                    src="/images/services/franchise-consultancy.jpg"
+                    alt="Franchise Store Layouts & Multi-Outlet Scaling"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                  <div className="absolute top-3 left-3 bg-amber-700/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm">
+                    Multi-City Scaling
+                  </div>
+                  <div className="absolute bottom-3 left-3 right-3 text-xs font-semibold text-white/95 bg-black/60 backdrop-blur-md p-2 rounded-xl">
+                    Store Layouts & Investor Deal Closures
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -521,23 +643,43 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* SERVICE 5: Restaurant Set-Up Consultancy */}
+      {/* SERVICE 7: Restaurant Set-Up Consultancy */}
       <section id="restaurant-setup" className="py-20 bg-white border-b border-slate-100 scroll-mt-20">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-5xl mx-auto space-y-10">
-            <div className="space-y-4 max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-700 text-xs font-bold uppercase tracking-wider">
-                Service 07 • Hospitality & F&B
+            <div className="grid lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-7 space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-700 text-xs font-bold uppercase tracking-wider">
+                  Service 07 • Hospitality & F&B
+                </div>
+                <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900">
+                  Restaurant Set-Up Consultancy
+                </h2>
+                <p className="text-2xl font-bold text-orange-600">
+                  “From Concept to Opening Day.”
+                </p>
+                <p className="text-slate-700 text-base sm:text-lg leading-relaxed">
+                  Launching a restaurant takes the right concept, location, layout, kitchen, team, systems, and operational planning.
+                </p>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900">
-                Restaurant Set-Up Consultancy
-              </h2>
-              <p className="text-2xl font-bold text-orange-600">
-                “From Concept to Opening Day.”
-              </p>
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed">
-                Launching a restaurant takes the right concept, location, layout, kitchen, team, systems, and operational planning.
-              </p>
+              <div className="lg:col-span-5 relative w-full">
+                <div className="relative h-56 sm:h-64 w-full rounded-3xl overflow-hidden border border-orange-200 shadow-xl group bg-orange-50">
+                  <Image
+                    src="/images/services/restaurant-setup.jpg"
+                    alt="Turnkey Commercial Kitchen & Dining Ambience"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                  <div className="absolute top-3 left-3 bg-orange-600/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm">
+                    Turnkey Kitchen & Dining
+                  </div>
+                  <div className="absolute bottom-3 left-3 right-3 text-xs font-semibold text-white/95 bg-black/60 backdrop-blur-md p-2 rounded-xl">
+                    Commercial Equipment & Chef Trials
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Complete 13 Restaurant Modules */}

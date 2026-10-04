@@ -91,15 +91,15 @@ export function FAQ() {
             </p>
 
             {/* Advisory Direct Card */}
-            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-soft space-y-4">
+            <div className="bg-white rounded-3xl p-5 sm:p-7 border border-slate-200/90 shadow-soft space-y-4">
               <h4 className="text-base font-bold text-slate-900">
                 Have a specific business question?
               </h4>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 Speak directly with our senior strategy consultant in Zirakpur to discuss tailored solutions for your brand.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <Link href="/contact" className="flex-1">
+              <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 pt-2">
+                <Link href="/contact" className="flex-1 w-full">
                   <Button className="w-full rounded-xl py-5 text-xs font-bold bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-600/20">
                     Book Discovery Call
                   </Button>
@@ -108,7 +108,7 @@ export function FAQ() {
                   href="https://wa.me/919876687109?text=Hello%20VIZ%20Digital,%20I%20have%20a%20question%20about%20your%20consulting%20services."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1"
+                  className="flex-1 w-full"
                 >
                   <Button
                     variant="outline"
@@ -128,7 +128,7 @@ export function FAQ() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-soft"
+            className="lg:col-span-7 bg-white rounded-3xl p-5 sm:p-8 border border-slate-200/90 shadow-soft"
           >
             <Accordion type="single" collapsible className="w-full space-y-2">
               {faqData.map((item, index) => (
@@ -137,7 +137,7 @@ export function FAQ() {
                   value={`item-${index}`}
                   className="border-b border-slate-100 last:border-b-0 py-1"
                 >
-                  <AccordionTrigger className="text-base sm:text-lg font-bold text-slate-900 hover:text-blue-600 hover:no-underline py-4 text-left transition-colors">
+                  <AccordionTrigger className="text-sm sm:text-base lg:text-lg font-bold text-slate-900 hover:text-blue-600 hover:no-underline py-3.5 sm:py-4 text-left transition-colors">
                     {item.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-slate-600 text-sm sm:text-base leading-relaxed pb-4 pt-1">

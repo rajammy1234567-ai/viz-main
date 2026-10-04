@@ -72,14 +72,14 @@ export function FrontHero() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="inline-flex flex-wrap items-center gap-2 p-1.5 pr-4 rounded-full bg-white/95 border border-blue-200/90 shadow-sm backdrop-blur-md"
+                className="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2 p-1.5 pr-3 sm:pr-4 rounded-2xl sm:rounded-full bg-white/95 border border-blue-200/90 shadow-sm backdrop-blur-md max-w-full"
               >
-                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-orange-500 text-white text-[11px] font-bold">
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-orange-500 text-white text-[10px] sm:text-[11px] font-bold shrink-0">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>360° Growth & Tech Ecosystem</span>
                 </div>
 
-                <div className="flex items-center gap-1.5 text-xs font-bold text-slate-800">
+                <div className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-slate-800 flex-wrap justify-center">
                   <ShinyText
                     text="Marketing • Restaurants • Franchises • Branding • IT • AI & Robotics"
                     color="#1e3a8a"
@@ -97,7 +97,7 @@ export function FrontHero() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="space-y-3"
               >
-                <h1 className="text-4xl sm:text-6xl lg:text-[64px] font-black text-slate-900 tracking-tight leading-[1.08]">
+                <h1 className="text-3xl sm:text-5xl lg:text-[60px] xl:text-[64px] font-black text-slate-900 tracking-tight leading-[1.1]">
                   <BlurText
                     text="Scaling Brands, Turnkey Restaurants &"
                     delay={50}
@@ -107,7 +107,7 @@ export function FrontHero() {
                     Future-Ready Tech.
                   </span>
                 </h1>
-                <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                <p className="text-sm sm:text-base lg:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   Whether launching your first commercial restaurant, expanding a 10-outlet franchise chain, driving high-ROI Meta & Google ad funnels, or mastering hands-on AI and Robotics with take-home kits — VIZ Digital is North India&apos;s complete growth engine.
                 </p>
               </motion.div>
@@ -142,8 +142,8 @@ export function FrontHero() {
               </motion.div>
 
               {/* All Services Quick Navigation Chips */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
-                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mr-1">
+              <div className="flex items-center justify-start lg:justify-start gap-2 pt-1 overflow-x-auto no-scrollbar scroll-touch pb-2 sm:pb-0 flex-nowrap sm:flex-wrap max-w-full">
+                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mr-1 shrink-0">
                   Quick Dive:
                 </span>
                 {[
@@ -159,7 +159,7 @@ export function FrontHero() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-700 hover:border-blue-400 hover:text-blue-600 shadow-xs transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-700 hover:border-blue-400 hover:text-blue-600 shadow-xs transition-colors shrink-0 whitespace-nowrap"
                     >
                       <Icon className="w-3.5 h-3.5 text-blue-600" />
                       <span>{item.name}</span>
@@ -170,7 +170,7 @@ export function FrontHero() {
 
               {/* Verified Client Proof Strip with Real Photos */}
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
-                <div className="flex -space-x-2.5 overflow-hidden">
+                <div className="flex -space-x-2.5 overflow-hidden shrink-0">
                   <div className="relative w-9 h-9 rounded-full border-2 border-white shadow-sm overflow-hidden bg-slate-200">
                     <Image
                       src="/images/clients/restaurant_client.jpg"
@@ -240,7 +240,7 @@ export function FrontHero() {
                   </div>
                 </div>
 
-                <div className="space-y-0.5 border-l border-slate-200 pl-4">
+                <div className="space-y-0.5 border-l-0 sm:border-l border-slate-200 pl-0 sm:pl-4">
                   <div className="text-2xl sm:text-3xl font-black text-emerald-600">
                     <CountUp to={4.8} prefix="" suffix="x" duration={2.4} />
                   </div>
@@ -265,7 +265,7 @@ export function FrontHero() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="lg:col-span-5 relative"
+              className="lg:col-span-5 relative max-w-xl mx-auto lg:max-w-none w-full"
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
@@ -275,7 +275,7 @@ export function FrontHero() {
 
                 <div className="relative bg-slate-950 text-white rounded-3xl border border-slate-800 shadow-2xl p-5 sm:p-6 overflow-hidden backdrop-blur-xl">
                   {/* Top 5 Service Tabs */}
-                  <div className="flex items-center justify-between gap-1 pb-3 mb-3 border-b border-slate-800/80 overflow-x-auto no-scrollbar">
+                  <div className="flex items-center justify-between gap-1 pb-3 mb-3 border-b border-slate-800/80 overflow-x-auto no-scrollbar scroll-touch">
                     <div className="flex gap-1">
                       {[
                         { id: 0, label: "Marketing", icon: TrendingUp, color: "text-emerald-400" },
@@ -351,23 +351,23 @@ export function FrontHero() {
                             </span>
                           </div>
 
-                          <div className="grid grid-cols-3 gap-2.5">
-                            <div className="p-3 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-1">
-                              <span className="text-[10px] text-slate-400 block font-medium">ROAS (Return)</span>
-                              <span className="text-xl font-black text-emerald-400 block">4.85x</span>
-                              <span className="text-[9px] text-emerald-500 font-semibold">+38% vs Industry</span>
+                          <div className="grid grid-cols-3 gap-1.5 sm:gap-2.5">
+                            <div className="p-2 sm:p-3 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-0.5 sm:space-y-1">
+                              <span className="text-[9px] sm:text-[10px] text-slate-400 block font-medium">ROAS (Return)</span>
+                              <span className="text-lg sm:text-xl font-black text-emerald-400 block">4.85x</span>
+                              <span className="text-[8px] sm:text-[9px] text-emerald-500 font-semibold block leading-tight">+38% vs Industry</span>
                             </div>
 
-                            <div className="p-3 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-1">
-                              <span className="text-[10px] text-slate-400 block font-medium">Monthly Leads</span>
-                              <span className="text-xl font-black text-blue-400 block">+342</span>
-                              <span className="text-[9px] text-blue-400 font-semibold">Verified Enquiries</span>
+                            <div className="p-2 sm:p-3 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-0.5 sm:space-y-1">
+                              <span className="text-[9px] sm:text-[10px] text-slate-400 block font-medium">Monthly Leads</span>
+                              <span className="text-lg sm:text-xl font-black text-blue-400 block">+342</span>
+                              <span className="text-[8px] sm:text-[9px] text-blue-400 font-semibold block leading-tight">Verified Enquiries</span>
                             </div>
 
-                            <div className="p-3 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-1">
-                              <span className="text-[10px] text-slate-400 block font-medium">Cost / Lead</span>
-                              <span className="text-xl font-black text-cyan-400 block">₹38</span>
-                              <span className="text-[9px] text-cyan-500 font-semibold">-42% Acquisition</span>
+                            <div className="p-2 sm:p-3 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-0.5 sm:space-y-1">
+                              <span className="text-[9px] sm:text-[10px] text-slate-400 block font-medium">Cost / Lead</span>
+                              <span className="text-lg sm:text-xl font-black text-cyan-400 block">₹38</span>
+                              <span className="text-[8px] sm:text-[9px] text-cyan-500 font-semibold block leading-tight">-42% Acquisition</span>
                             </div>
                           </div>
 
@@ -642,8 +642,8 @@ export function FrontHero() {
                     </AnimatePresence>
 
                     {/* Bottom Quick Card CTA */}
-                    <div className="pt-3 mt-3 border-t border-slate-800/80 flex items-center justify-between">
-                      <div className="flex items-center gap-2">
+                    <div className="pt-3 mt-3 border-t border-slate-800/80 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
+                      <div className="flex items-center gap-2 text-center sm:text-left justify-center sm:justify-start">
                         <span className="text-xs font-bold text-slate-300">
                           {activeTab === 0
                             ? "Scale Your Ad ROI"
@@ -662,7 +662,7 @@ export function FrontHero() {
                         href="https://wa.me/919876687109?text=Hello%20VIZ%20Digital,%20I%20would%20like%20to%20consult%20about%20your%20services."
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-orange-500 hover:opacity-95 text-white font-bold text-xs px-3.5 py-2 rounded-xl transition-all shadow-md"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-orange-500 hover:opacity-95 text-white font-bold text-xs px-3.5 py-2.5 rounded-xl transition-all shadow-md shrink-0"
                       >
                         <MessageCircle className="w-3.5 h-3.5" />
                         <span>Chat on WhatsApp</span>
@@ -672,11 +672,11 @@ export function FrontHero() {
                 </div>
               </TiltedCard>
 
-              {/* Floating Badge 1: Commercial Impact */}
+              {/* Floating Badge 1: Commercial Impact - Shown only on XL desktop to avoid mobile/tablet overflow */}
               <motion.div
                 animate={{ y: [0, -7, 0] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                className="hidden sm:flex absolute -bottom-5 -left-6 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl border border-blue-200/90 shadow-xl items-center gap-3 z-20"
+                className="hidden xl:flex absolute -bottom-5 -left-6 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl border border-blue-200/90 shadow-xl items-center gap-3 z-20 pointer-events-none"
               >
                 <div className="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center font-bold">
                   <UtensilsCrossed className="w-5 h-5" />
@@ -691,11 +691,11 @@ export function FrontHero() {
                 </div>
               </motion.div>
 
-              {/* Floating Badge 2: Verified Partner */}
+              {/* Floating Badge 2: Verified Partner - Shown only on XL desktop to avoid mobile/tablet overflow */}
               <motion.div
                 animate={{ y: [0, 7, 0] }}
                 transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
-                className="hidden sm:flex absolute -top-5 -right-6 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl border border-emerald-200/90 shadow-xl items-center gap-3 z-20"
+                className="hidden xl:flex absolute -top-5 -right-6 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl border border-emerald-200/90 shadow-xl items-center gap-3 z-20 pointer-events-none"
               >
                 <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
                   <TrendingUp className="w-5 h-5" />

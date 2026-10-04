@@ -173,8 +173,8 @@ export function HappyFamiliesShowcase() {
             className="bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden grid lg:grid-cols-12 gap-0 relative"
           >
             {/* Left: Authentic Real Client Photo with Verified Proof Badge */}
-            <div className="lg:col-span-6 relative min-h-[420px] sm:min-h-[480px] w-full overflow-hidden group bg-slate-950">
-              <div className="relative w-full h-full min-h-[420px] sm:min-h-[480px]">
+            <div className="lg:col-span-6 relative min-h-[360px] sm:min-h-[440px] lg:min-h-[480px] w-full overflow-hidden group bg-slate-950">
+              <div className="relative w-full h-full min-h-[360px] sm:min-h-[440px] lg:min-h-[480px]">
                 <Image
                   src={current.image}
                   alt={`${current.name} - ${current.business}`}
@@ -189,42 +189,42 @@ export function HappyFamiliesShowcase() {
                 <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-transparent to-transparent pointer-events-none" />
 
                 {/* Top Badges */}
-                <div className="absolute top-5 left-5 right-5 flex items-center justify-between z-10">
-                  <div className="bg-slate-900/85 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 flex items-center gap-2 shadow-lg">
-                    <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                    <span className="text-xs font-bold text-white">
+                <div className="absolute top-4 sm:top-5 left-4 sm:left-5 right-4 sm:right-5 flex items-center justify-between z-10 gap-2">
+                  <div className="bg-slate-900/85 backdrop-blur-md px-3 sm:px-3.5 py-1.5 rounded-full border border-white/20 flex items-center gap-2 shadow-lg">
+                    <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
+                    <span className="text-[11px] sm:text-xs font-bold text-white">
                       Verified Client Partner
                     </span>
                   </div>
-                  <span className="text-xs font-bold text-orange-300 bg-slate-900/85 backdrop-blur-md px-3 py-1 rounded-full border border-orange-400/30 shadow-lg">
+                  <span className="text-[11px] sm:text-xs font-bold text-orange-300 bg-slate-900/85 backdrop-blur-md px-3 py-1 rounded-full border border-orange-400/30 shadow-lg truncate">
                     {current.category}
                   </span>
                 </div>
 
                 {/* Bottom Verified Client Details on Photo */}
-                <div className="absolute bottom-5 left-5 right-5 z-10 space-y-3">
+                <div className="absolute bottom-4 sm:bottom-5 left-4 sm:left-5 right-4 sm:right-5 z-10 space-y-2.5 sm:space-y-3">
                   <div>
                     <div className="flex items-center gap-1.5 text-xs font-semibold text-orange-300 mb-1">
                       <MapPin className="w-3.5 h-3.5" />
                       <span>{current.location}</span>
                     </div>
-                    <h3 className="text-2xl sm:text-3xl font-black text-white drop-shadow-md">
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white drop-shadow-md">
                       {current.business}
                     </h3>
-                    <p className="text-sm text-slate-200 font-medium mt-0.5">
+                    <p className="text-xs sm:text-sm text-slate-200 font-medium mt-0.5">
                       Client: <span className="text-white font-bold">{current.name}</span>
                     </p>
                   </div>
 
                   {/* Metric Strip on Photo */}
-                  <div className="grid grid-cols-2 gap-2 text-xs">
-                    <div className="p-2.5 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/15">
-                      <span className="text-[10px] text-slate-300 block">Verified Outcome</span>
-                      <span className="font-black text-emerald-400 text-sm">{current.stats} {current.statLabel}</span>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2 text-xs">
+                    <div className="p-2 sm:p-2.5 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/15">
+                      <span className="text-[9px] sm:text-[10px] text-slate-300 block">Verified Outcome</span>
+                      <span className="font-black text-emerald-400 text-xs sm:text-sm">{current.stats} {current.statLabel}</span>
                     </div>
-                    <div className="p-2.5 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/15">
-                      <span className="text-[10px] text-slate-300 block">Consulting Scope</span>
-                      <span className="font-bold text-blue-300 text-sm">Turnkey Growth Partner</span>
+                    <div className="p-2 sm:p-2.5 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/15">
+                      <span className="text-[9px] sm:text-[10px] text-slate-300 block">Consulting Scope</span>
+                      <span className="font-bold text-blue-300 text-xs sm:text-sm">Turnkey Growth Partner</span>
                     </div>
                   </div>
                 </div>
@@ -232,7 +232,7 @@ export function HappyFamiliesShowcase() {
             </div>
 
             {/* Right: Success Story Narrative & Metrics */}
-            <div className="lg:col-span-6 p-6 sm:p-10 lg:p-12 flex flex-col justify-between space-y-6">
+            <div className="lg:col-span-6 p-5 sm:p-8 lg:p-12 flex flex-col justify-between space-y-6">
               <div className="space-y-6">
                 {/* Header with Category and Rating */}
                 <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-5">
@@ -287,19 +287,19 @@ export function HappyFamiliesShowcase() {
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
-                <Link href="/clients">
+              <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                <Link href="/clients" className="w-full sm:w-auto">
                   <Button
                     variant="outline"
-                    className="rounded-xl px-5 py-5 text-xs sm:text-sm font-semibold border-slate-300 text-slate-800 hover:bg-blue-50 hover:text-blue-700 hover:border-blue-300"
+                    className="w-full sm:w-auto rounded-xl px-5 py-5 text-xs sm:text-sm font-semibold border-slate-300 text-slate-800 hover:bg-blue-50 hover:text-blue-700 hover:border-blue-300"
                   >
                     <span>View All 1,000+ Client Stories</span>
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </Link>
 
-                <Link href="/contact">
-                  <Button className="rounded-xl px-6 py-5 text-xs sm:text-sm font-bold bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-600/20">
+                <Link href="/contact" className="w-full sm:w-auto">
+                  <Button className="w-full sm:w-auto rounded-xl px-6 py-5 text-xs sm:text-sm font-bold bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-600/20">
                     Scale Your Family Business
                   </Button>
                 </Link>

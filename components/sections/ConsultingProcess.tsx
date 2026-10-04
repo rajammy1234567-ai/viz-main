@@ -126,7 +126,7 @@ export function ConsultingProcess() {
               >
                 <SpotlightCard
                   spotlightColor="rgba(37, 99, 235, 0.1)"
-                  className="bg-white rounded-3xl p-7 border border-slate-200/90 shadow-soft hover:shadow-card-hover hover:border-blue-300 transition-all duration-300 flex flex-col justify-between group h-full"
+                  className="bg-white rounded-3xl p-5 sm:p-7 border border-slate-200/90 shadow-soft hover:shadow-card-hover hover:border-blue-300 transition-all duration-300 flex flex-col justify-between group h-full"
                 >
                   <div className="space-y-5">
                     {/* Step number and icon */}
@@ -179,9 +179,9 @@ export function ConsultingProcess() {
         </div>
 
         {/* Bottom Discovery Session CTA Bar */}
-        <div className="mt-14 max-w-4xl mx-auto bg-gradient-to-r from-blue-50 via-slate-50 to-orange-50 p-6 sm:p-8 rounded-3xl border border-blue-200/80 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-soft">
+        <div className="mt-14 max-w-4xl mx-auto bg-gradient-to-r from-blue-50 via-slate-50 to-orange-50 p-5 sm:p-8 rounded-3xl border border-blue-200/80 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-5 sm:gap-6 shadow-soft">
           <div className="space-y-1 text-center sm:text-left">
-            <h4 className="text-lg font-bold text-slate-900">
+            <h4 className="text-base sm:text-lg font-bold text-slate-900">
               Ready to start at Step 01?
             </h4>
             <p className="text-xs sm:text-sm text-slate-600">

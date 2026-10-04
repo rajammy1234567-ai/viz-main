@@ -101,7 +101,7 @@ export function LocationSection() {
           >
             <SpotlightCard
               spotlightColor="rgba(37, 99, 235, 0.09)"
-              className="bg-white rounded-3xl p-7 sm:p-9 border border-slate-200/90 shadow-soft flex flex-col justify-between space-y-6 h-full"
+              className="bg-white rounded-3xl p-5 sm:p-7 md:p-9 border border-slate-200/90 shadow-soft flex flex-col justify-between space-y-6 h-full"
             >
               <div className="space-y-6">
                 {/* Header inside card */}
@@ -117,8 +117,8 @@ export function LocationSection() {
                 </div>
 
                 {/* Address */}
-                <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 shadow-xs">
+                <div className="flex items-start gap-3.5 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 shadow-xs">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
@@ -134,8 +134,8 @@ export function LocationSection() {
                 </div>
 
                 {/* Phone & WhatsApp */}
-                <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center shrink-0 shadow-xs">
+                <div className="flex items-start gap-3.5 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center shrink-0 shadow-xs">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
@@ -155,8 +155,8 @@ export function LocationSection() {
                 </div>
 
                 {/* Email */}
-                <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 shadow-xs">
+                <div className="flex items-start gap-3.5 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 shadow-xs">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
@@ -173,8 +173,8 @@ export function LocationSection() {
                 </div>
 
                 {/* Working Hours */}
-                <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 shadow-xs">
+                <div className="flex items-start gap-3.5 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 shadow-xs">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
@@ -197,7 +197,7 @@ export function LocationSection() {
                   href={googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1"
+                  className="flex-1 w-full"
                 >
                   <Button
                     variant="outline"
@@ -212,7 +212,7 @@ export function LocationSection() {
                   href="https://wa.me/919876687109?text=Hello%20VIZ%20Digital,%20I%20would%20like%20to%20schedule%20an%20in-person%20meeting%20at%20your%20Zirakpur%20office."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1"
+                  className="flex-1 w-full"
                 >
                   <Button className="w-full rounded-xl py-5 text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white shadow-md shadow-emerald-600/20 flex items-center justify-center gap-2">
                     <MessageCircle className="w-4 h-4" />
@@ -229,19 +229,19 @@ export function LocationSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="lg:col-span-7 bg-white rounded-3xl p-3 sm:p-4 border border-slate-200/90 shadow-soft flex flex-col justify-between relative overflow-hidden min-h-[420px]"
+            className="lg:col-span-7 bg-white rounded-3xl p-3 sm:p-4 border border-slate-200/90 shadow-soft flex flex-col justify-between relative overflow-hidden min-h-[350px] sm:min-h-[420px]"
           >
             {/* Top Interactive Banner on Map */}
-            <div className="p-3 bg-slate-50/90 rounded-2xl border border-slate-200/80 mb-3 flex items-center justify-between text-xs">
+            <div className="p-3 bg-slate-50/90 rounded-2xl border border-slate-200/80 mb-3 flex flex-col sm:flex-row gap-2 items-start sm:items-center justify-between text-xs">
               <div className="flex items-center gap-2 text-slate-700 font-semibold">
-                <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>Motiaz Royal Business Park • Zirakpur, Punjab</span>
               </div>
               <a
                 href={googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 font-bold text-blue-600 hover:underline"
+                className="inline-flex items-center gap-1 font-bold text-blue-600 hover:underline shrink-0"
               >
                 <span>Full Map</span>
                 <ExternalLink className="w-3.5 h-3.5" />
@@ -249,7 +249,7 @@ export function LocationSection() {
             </div>
 
             {/* Google Map Iframe Container */}
-            <div className="relative w-full h-[400px] lg:h-full rounded-2xl overflow-hidden border border-slate-200 shadow-inner">
+            <div className="relative w-full h-[280px] sm:h-[380px] lg:h-full rounded-2xl overflow-hidden border border-slate-200 shadow-inner">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3440.324835492196!2d76.82772597652758!3d30.644719289874837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390feee0b2e8c6b1%3A0x7e1c2b0e1e2e2e2e!2sMotiaz%20Royal%20Business%20Park%2C%20Zirakpur%2C%20Punjab%20140603!5e0!3m2!1sen!2sin!4v1708800000000!5m2!1sen!2sin"
                 width="100%"

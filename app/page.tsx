@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -43,7 +44,10 @@ export default function Home() {
       id: "digital-marketing",
       title: "Digital Marketing & Performance",
       icon: TrendingUp,
-      badge: "Lead Gen & Walk-Ins",
+      image: "/images/services/digital-marketing.jpg",
+      visualTag: "4.8x ROAS Funnels",
+      idealFor: "Retailers, Clinics & Local Brands",
+      badge: "Lead Gen & Footfall",
       badgeColor: "bg-blue-50 text-blue-700 border-blue-200",
       description:
         "High-performance Meta & Google ad funnels that multiply online visibility, local customer footfall, and measurable revenue ROI.",
@@ -58,6 +62,9 @@ export default function Home() {
       id: "restaurant-setup",
       title: "Restaurant & Cafe Set-Up Consultancy",
       icon: UtensilsCrossed,
+      image: "/images/services/restaurant-setup.jpg",
+      visualTag: "Turnkey Kitchen & Dining",
+      idealFor: "Cafe, Restaurant & Cloud Kitchen Founders",
       badge: "Concept to Opening Day",
       badgeColor: "bg-orange-50 text-orange-800 border-orange-200",
       description:
@@ -74,6 +81,9 @@ export default function Home() {
       id: "franchise-consultancy",
       title: "Franchise Consultancy & Scaling",
       icon: Store,
+      image: "/images/services/franchise-consultancy.jpg",
+      visualTag: "Multi-Store Chain Expansion",
+      idealFor: "Proven Brands Ready to Scale 10+ Outlets",
       badge: "Multi-City Expansion",
       badgeColor: "bg-amber-50 text-amber-800 border-amber-200",
       description:
@@ -89,6 +99,9 @@ export default function Home() {
       id: "brand-management",
       title: "Brand Management & Branding",
       icon: Sparkles,
+      image: "/images/services/brand-management.jpg",
+      visualTag: "Luxury Packaging & Identity",
+      idealFor: "D2C, Hospitality & Premium Brands",
       badge: "Premium Visual Identity",
       badgeColor: "bg-purple-50 text-purple-700 border-purple-200",
       description:
@@ -105,6 +118,9 @@ export default function Home() {
       id: "information-technology",
       title: "Information Technology & Systems",
       icon: Cpu,
+      image: "/images/services/information-technology.jpg",
+      visualTag: "Cloud POS & Multi-Store ERP",
+      idealFor: "Restaurants, Retailers & Multi-Branch Outlets",
       badge: "Enterprise Tech Stack",
       badgeColor: "bg-indigo-50 text-indigo-700 border-indigo-200",
       description:
@@ -120,6 +136,9 @@ export default function Home() {
       id: "ai-classes",
       title: "Artificial Intelligence (AI) Classes",
       icon: Brain,
+      image: "/images/services/ai-classes.jpg",
+      visualTag: "GenAI & Prompt Masterclass",
+      idealFor: "Students, Creators, Founders & Professionals",
       badge: "GenAI & Prompt Mastery",
       badgeColor: "bg-purple-50 text-purple-700 border-purple-200",
       description:
@@ -136,6 +155,9 @@ export default function Home() {
       id: "robotics-classes",
       title: "Hands-on Robotics & STEM Labs",
       icon: Bot,
+      image: "/images/services/robotics-classes.jpg",
+      visualTag: "Hardware Kit Included",
+      idealFor: "School Kids (Ages 8+), Teens & Engineers",
       badge: "Hardware Kit Included",
       badgeColor: "bg-cyan-50 text-cyan-700 border-cyan-200",
       description:
@@ -204,68 +226,101 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Service Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Service Cards Grid - Every Service features clear photography so visitors instantly know what it is for */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8">
             {services.map((service) => {
               const Icon = service.icon;
               return (
                 <SpotlightCard
                   key={service.id}
                   spotlightColor="rgba(37, 99, 235, 0.09)"
-                  className="bg-white rounded-3xl p-7 sm:p-8 border border-slate-200/90 shadow-soft hover:shadow-card-hover hover:border-blue-400 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 h-full"
+                  className="bg-white rounded-3xl border border-slate-200/90 shadow-soft hover:shadow-card-hover hover:border-blue-400 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 h-full overflow-hidden"
                 >
-                  <div className="space-y-5">
-                    {/* Header with Icon and Badge */}
-                    <div className="flex items-center justify-between">
-                      <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-xs">
-                        <Icon className="w-7 h-7 stroke-[1.8]" />
+                  <div className="flex flex-col h-full">
+                    {/* High-Impact Service Hero Image */}
+                    <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-100 shrink-0">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      />
+                      {/* Dark gradient for text & badge legibility */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent" />
+
+                      {/* Floating Category Badge */}
+                      <div className="absolute top-3.5 right-3.5 z-10">
+                        <span
+                          className={`text-[11px] font-bold px-3 py-1 rounded-full backdrop-blur-md bg-white/95 shadow-sm border ${service.badgeColor}`}
+                        >
+                          {service.badge}
+                        </span>
                       </div>
-                      <span
-                        className={`text-xs font-bold px-3 py-1 rounded-full border ${service.badgeColor}`}
-                      >
-                        {service.badge}
-                      </span>
+
+                      {/* Bottom Overlay on Image: Icon & Visual Indicator */}
+                      <div className="absolute bottom-3 left-3.5 right-3.5 flex items-end justify-between z-10">
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-10 h-10 rounded-xl bg-white/95 backdrop-blur-md text-blue-600 flex items-center justify-center shadow-md group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shrink-0">
+                            <Icon className="w-5 h-5 stroke-[2]" />
+                          </div>
+                          <span className="text-[10px] font-extrabold uppercase tracking-wider text-white bg-slate-900/75 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/20">
+                            {service.visualTag}
+                          </span>
+                        </div>
+                      </div>
                     </div>
 
-                    {/* Title */}
-                    <h3 className="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                      {service.title}
-                    </h3>
+                    {/* Card Content with Clear Hierarchy */}
+                    <div className="p-5 sm:p-6 flex flex-col justify-between flex-1 space-y-4">
+                      <div className="space-y-3">
+                        {/* Target Audience Pill */}
+                        <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-blue-700 bg-blue-50/90 px-2.5 py-1 rounded-md border border-blue-100">
+                          <span className="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                          <span>Ideal for: {service.idealFor}</span>
+                        </div>
 
-                    {/* Description */}
-                    <p className="text-slate-600 text-sm leading-relaxed">
-                      {service.description}
-                    </p>
+                        {/* Title */}
+                        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
+                          {service.title}
+                        </h3>
 
-                    {/* Features list */}
-                    <ul className="space-y-2.5 pt-3 border-t border-slate-100">
-                      {service.features.map((feature, i) => (
-                        <li
-                          key={i}
-                          className="flex items-start gap-2.5 text-xs font-semibold text-slate-700"
+                        {/* Description */}
+                        <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                          {service.description}
+                        </p>
+
+                        {/* Features list */}
+                        <ul className="space-y-2 pt-3 border-t border-slate-100">
+                          {service.features.map((feature, i) => (
+                            <li
+                              key={i}
+                              className="flex items-start gap-2 text-xs font-semibold text-slate-700"
+                            >
+                              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+
+                        {service.highlight && (
+                          <p className="text-[11px] font-semibold text-orange-900 bg-orange-50/90 p-2.5 rounded-xl border border-orange-200/80 italic">
+                            {service.highlight}
+                          </p>
+                        )}
+                      </div>
+
+                      {/* Card Action Link */}
+                      <div className="pt-4 border-t border-slate-100 flex items-center justify-between mt-auto">
+                        <Link
+                          href={service.link}
+                          className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group-hover:translate-x-1 duration-200"
                         >
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {service.highlight && (
-                      <p className="text-xs font-semibold text-orange-800 bg-orange-50/90 p-3 rounded-xl border border-orange-200/80 italic">
-                        {service.highlight}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Card Action Link */}
-                  <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
-                    <Link
-                      href={service.link}
-                      className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group-hover:translate-x-1 duration-200"
-                    >
-                      <span>Explore Service Roadmap</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
+                          <span>Explore Service Scope</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </SpotlightCard>
               );
@@ -382,34 +437,34 @@ export default function Home() {
       <LocationSection />
 
       {/* Bottom CTA Banner */}
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-16 sm:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-          <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 rounded-3xl p-8 sm:p-14 text-white shadow-2xl relative overflow-hidden">
+          <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 rounded-3xl p-6 sm:p-10 lg:p-14 text-white shadow-2xl relative overflow-hidden">
             <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="relative z-10 space-y-6 max-w-2xl">
+            <div className="relative z-10 space-y-5 sm:space-y-6 max-w-2xl">
               <span className="text-xs font-bold uppercase tracking-wider bg-white/20 px-3.5 py-1.5 rounded-full inline-block">
                 Start Your Journey With VIZ Digital
               </span>
-              <h2 className="text-3xl sm:text-5xl font-black leading-tight">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black leading-tight">
                 Turn your business ideas into scalable reality.
               </h2>
-              <p className="text-blue-100 text-base sm:text-lg leading-relaxed">
+              <p className="text-blue-100 text-sm sm:text-base lg:text-lg leading-relaxed">
                 Connect with our consulting team in Zirakpur, Punjab to discuss your business strategy, branding, digital technology, franchise, or restaurant goals.
               </p>
 
-              <div className="pt-4 flex flex-wrap items-center gap-4">
-                <Link href="/contact">
+              <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+                <Link href="/contact" className="w-full sm:w-auto">
                   <Button
                     size="lg"
-                    className="bg-white text-blue-700 hover:bg-blue-50 font-bold px-8 py-6 rounded-2xl shadow-md text-base"
+                    className="w-full sm:w-auto bg-white text-blue-700 hover:bg-blue-50 font-bold px-8 py-6 rounded-2xl shadow-md text-sm sm:text-base"
                   >
                     Contact Us Today
                   </Button>
                 </Link>
                 <a
                   href="tel:9876687109"
-                  className="inline-flex items-center gap-2 bg-blue-500/30 hover:bg-blue-500/40 text-white border border-white/20 font-semibold px-6 py-3.5 rounded-2xl transition-colors text-sm"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-blue-500/30 hover:bg-blue-500/40 text-white border border-white/20 font-semibold px-6 py-3.5 rounded-2xl transition-colors text-sm text-center"
                 >
                   <Phone className="w-4 h-4" />
                   <span>Call: 98766 87109</span>

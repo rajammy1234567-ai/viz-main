@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -35,6 +36,7 @@ interface Course {
   id: string;
   category: "ai" | "robotics" | "marketing";
   title: string;
+  image: string;
   badge: string;
   badgeColor: string;
   accentColor: string;
@@ -54,8 +56,9 @@ const coursesData: Course[] = [
     id: "gen-ai-masterclass",
     category: "ai",
     title: "Generative AI & Prompt Engineering Masterclass",
+    image: "/images/services/ai-classes.jpg",
     badge: "🔥 Most Popular • High Demand",
-    badgeColor: "bg-purple-500/10 text-purple-600 border-purple-500/20",
+    badgeColor: "bg-purple-500/10 text-purple-400 border-purple-500/30",
     accentColor: "from-purple-600 to-indigo-600",
     icon: Sparkles,
     level: "All Levels (No Coding Needed)",
@@ -78,8 +81,9 @@ const coursesData: Course[] = [
     id: "hands-on-robotics-iot",
     category: "robotics",
     title: "Hands-on Robotics & IoT Engineering Lab",
+    image: "/images/services/robotics-classes.jpg",
     badge: "⚡ Hardware Kit Included • Practical",
-    badgeColor: "bg-cyan-500/10 text-cyan-600 border-cyan-500/20",
+    badgeColor: "bg-cyan-500/10 text-cyan-400 border-cyan-500/30",
     accentColor: "from-cyan-600 to-blue-600",
     icon: Bot,
     level: "Beginner to Intermediate",
@@ -102,8 +106,9 @@ const coursesData: Course[] = [
     id: "applied-ai-python",
     category: "ai",
     title: "Applied AI & Machine Learning with Python",
+    image: "/images/services/ai-classes.jpg",
     badge: "🚀 Career Bootcamp • Coding",
-    badgeColor: "bg-blue-500/10 text-blue-600 border-blue-500/20",
+    badgeColor: "bg-blue-500/10 text-blue-400 border-blue-500/30",
     accentColor: "from-blue-600 to-indigo-600",
     icon: Brain,
     level: "Intermediate (Basic Logic Helpful)",
@@ -126,8 +131,9 @@ const coursesData: Course[] = [
     id: "stem-junior-robotics",
     category: "robotics",
     title: "STEM Junior Robotics & Coding Lab (Ages 8-15)",
+    image: "/images/services/robotics-classes.jpg",
     badge: "🌟 Kids & Teens Special",
-    badgeColor: "bg-amber-500/10 text-amber-600 border-amber-500/20",
+    badgeColor: "bg-amber-500/10 text-amber-400 border-amber-500/30",
     accentColor: "from-amber-500 to-orange-600",
     icon: Boxes,
     level: "School Students (Ages 8-15)",
@@ -150,8 +156,9 @@ const coursesData: Course[] = [
     id: "advanced-robotics-drone",
     category: "robotics",
     title: "Advanced Robotics, Raspberry Pi & Drone Tech",
+    image: "/images/services/robotics-classes.jpg",
     badge: "🛸 Next-Gen Tech • Limited Seats",
-    badgeColor: "bg-emerald-500/10 text-emerald-600 border-emerald-500/20",
+    badgeColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/30",
     accentColor: "from-emerald-600 to-teal-600",
     icon: Wrench,
     level: "Advanced (College/Grads/Techies)",
@@ -174,8 +181,9 @@ const coursesData: Course[] = [
     id: "ai-digital-marketing-bootcamp",
     category: "marketing",
     title: "AI-Powered Digital Marketing & Growth Bootcamp",
+    image: "/images/services/digital-marketing.jpg",
     badge: "📈 Live Client Budgets • 4x+ ROAS",
-    badgeColor: "bg-rose-500/10 text-rose-600 border-rose-500/20",
+    badgeColor: "bg-rose-500/10 text-rose-400 border-rose-500/30",
     accentColor: "from-rose-600 to-orange-600",
     icon: TrendingUp,
     level: "Beginner to Professional",
@@ -251,7 +259,7 @@ export function AiRoboticsClasses() {
           </p>
 
           {/* Category Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 pt-4">
+          <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 pt-4">
             {[
               { id: "all", label: "All Programs", icon: Layers, count: "6 Courses" },
               { id: "ai", label: "Artificial Intelligence (AI)", icon: Brain, count: "2 Masterclasses" },
@@ -264,13 +272,13 @@ export function AiRoboticsClasses() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as Category)}
-                  className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 ${
+                  className={`flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 ${
                     isActive
                       ? "bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 text-white shadow-lg shadow-blue-500/30 scale-105"
                       : "bg-slate-800/80 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700/60"
                   }`}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span>{tab.label}</span>
                 </button>
               );
@@ -279,7 +287,7 @@ export function AiRoboticsClasses() {
         </div>
 
         {/* Courses Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           <AnimatePresence mode="popLayout">
             {filteredCourses.map((course) => {
               const Icon = course.icon;
@@ -293,127 +301,143 @@ export function AiRoboticsClasses() {
                   transition={{ duration: 0.3 }}
                   className="flex"
                 >
-                  <div className="w-full bg-slate-900/90 rounded-3xl p-7 border border-slate-700/80 shadow-xl hover:border-cyan-400/60 hover:shadow-cyan-500/10 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 backdrop-blur-xl relative overflow-hidden">
+                  <div className="w-full bg-slate-900/90 rounded-3xl border border-slate-700/80 shadow-xl hover:border-cyan-400/60 hover:shadow-cyan-500/10 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5 backdrop-blur-xl relative overflow-hidden">
                     {/* Top Ambient Glow */}
                     <div
                       className={`absolute top-0 right-0 w-44 h-44 bg-gradient-to-br ${course.accentColor} opacity-15 rounded-full blur-3xl pointer-events-none group-hover:opacity-30 transition-opacity`}
                     />
 
-                    <div className="space-y-5 relative z-10">
-                      {/* Badge & Category Header */}
-                      <div className="flex items-center justify-between gap-2">
+                    {/* Course Photography Banner */}
+                    <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-slate-950 shrink-0">
+                      <Image
+                        src={course.image}
+                        alt={course.title}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
+
+                      {/* Floating Badges */}
+                      <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
                         <span
-                          className={`text-[11px] font-bold px-3 py-1 rounded-full border ${course.badgeColor}`}
+                          className={`text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md bg-slate-900/85 border ${course.badgeColor}`}
                         >
                           {course.badge}
                         </span>
                         {course.hardwareKit && (
-                          <span className="text-[10px] font-extrabold uppercase tracking-wider bg-cyan-950 text-cyan-300 px-2.5 py-0.5 rounded-md border border-cyan-500/30">
-                            Kit Included
+                          <span className="text-[10px] font-extrabold uppercase tracking-wider bg-cyan-950/90 backdrop-blur-md text-cyan-300 px-2 py-0.5 rounded-md border border-cyan-500/40">
+                            ⚡ Kit Included
                           </span>
                         )}
                       </div>
 
-                      {/* Icon & Title */}
-                      <div className="flex items-start gap-3.5">
+                      {/* Bottom Overlay on Image: Icon & Category */}
+                      <div className="absolute bottom-2.5 left-3.5 z-10 flex items-center gap-2">
                         <div
-                          className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${course.accentColor} text-white flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                          className={`w-9 h-9 rounded-xl bg-gradient-to-br ${course.accentColor} text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 shrink-0`}
                         >
-                          <Icon className="w-6 h-6" />
+                          <Icon className="w-4 h-4" />
                         </div>
-                        <div>
-                          <h3 className="text-xl font-black text-white group-hover:text-cyan-300 transition-colors leading-snug">
-                            {course.title}
-                          </h3>
-                        </div>
-                      </div>
-
-                      {/* Description */}
-                      <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                        {course.description}
-                      </p>
-
-                      {/* Batch Meta Pills (Level, Duration, Mode) */}
-                      <div className="grid grid-cols-2 gap-2 pt-1">
-                        <div className="flex items-center gap-1.5 text-[11px] text-slate-300 bg-slate-800/80 px-2.5 py-1.5 rounded-xl border border-slate-700/50">
-                          <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                          <span className="truncate">{course.duration}</span>
-                        </div>
-                        <div className="flex items-center gap-1.5 text-[11px] text-slate-300 bg-slate-800/80 px-2.5 py-1.5 rounded-xl border border-slate-700/50">
-                          <GraduationCap className="w-3.5 h-3.5 text-purple-400 shrink-0" />
-                          <span className="truncate">{course.level}</span>
-                        </div>
-                      </div>
-
-                      {/* Key Syllabus Modules */}
-                      <div className="space-y-2 pt-2 border-t border-slate-800">
-                        <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
-                          Key Practical Modules:
-                        </p>
-                        <ul className="space-y-2">
-                          {course.highlights.map((point, idx) => (
-                            <li
-                              key={idx}
-                              className="flex items-start gap-2 text-xs text-slate-200"
-                            >
-                              <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                              <span className="leading-snug">{point}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Tools & Tech Chips */}
-                      <div className="pt-2">
-                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">
-                          Tools & Hardware Mastered:
-                        </p>
-                        <div className="flex flex-wrap gap-1.5">
-                          {course.tools.map((tool) => (
-                            <span
-                              key={tool}
-                              className="text-[10px] font-semibold bg-slate-800 text-slate-200 px-2.5 py-1 rounded-lg border border-slate-700"
-                            >
-                              {tool}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Certification Badge */}
-                      <div className="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60 flex items-center gap-2 text-[11px] text-slate-300">
-                        <Award className="w-4 h-4 text-amber-400 shrink-0" />
-                        <span>
-                          Includes:{" "}
-                          <strong className="text-white">{course.certificate}</strong>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-200/90 bg-slate-900/80 backdrop-blur-md px-2 py-0.5 rounded border border-cyan-500/20">
+                          {course.category.toUpperCase()} Lab
                         </span>
                       </div>
                     </div>
 
-                    {/* Bottom CTA Actions */}
-                    <div className="pt-6 mt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center gap-2.5 relative z-10">
-                      <a
-                        href={`https://wa.me/919876687109?text=Hello%20VIZ%20Tech%20Academy,%20I%20am%20interested%20in%20enrolling%20in%20the%20${encodeURIComponent(
-                          course.title
-                        )}.%20Please%20share%20the%20batch%20timings%20and%20fees.`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full flex-1"
-                      >
-                        <Button className="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-5 rounded-xl shadow-md transition-all text-xs flex items-center justify-center gap-1.5">
-                          <MessageCircle className="w-4 h-4 fill-slate-950" />
-                          <span>Book Free Demo</span>
-                        </Button>
-                      </a>
+                    <div className="p-5 sm:p-6 space-y-4 relative z-10 flex-1 flex flex-col justify-between">
+                      <div className="space-y-3">
+                        <h3 className="text-lg sm:text-xl font-black text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                          {course.title}
+                        </h3>
 
-                      <Link href="/contact" className="w-full sm:w-auto">
-                        <Button
-                          variant="outline"
-                          className="w-full sm:w-auto border-slate-700 hover:border-slate-500 text-slate-200 hover:bg-slate-800 text-xs py-5 rounded-xl font-semibold"
+                        {/* Description */}
+                        <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                          {course.description}
+                        </p>
+
+                        {/* Batch Meta Pills (Level, Duration, Mode) */}
+                        <div className="grid grid-cols-2 gap-2 pt-1">
+                          <div className="flex items-center gap-1.5 text-[11px] text-slate-300 bg-slate-800/80 px-2.5 py-1.5 rounded-xl border border-slate-700/50">
+                            <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                            <span className="truncate">{course.duration}</span>
+                          </div>
+                          <div className="flex items-center gap-1.5 text-[11px] text-slate-300 bg-slate-800/80 px-2.5 py-1.5 rounded-xl border border-slate-700/50">
+                            <GraduationCap className="w-3.5 h-3.5 text-purple-400 shrink-0" />
+                            <span className="truncate">{course.level}</span>
+                          </div>
+                        </div>
+
+                        {/* Key Syllabus Modules */}
+                        <div className="space-y-2 pt-2 border-t border-slate-800">
+                          <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                            Key Practical Modules:
+                          </p>
+                          <ul className="space-y-2">
+                            {course.highlights.map((point, idx) => (
+                              <li
+                                key={idx}
+                                className="flex items-start gap-2 text-xs text-slate-200"
+                              >
+                                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                                <span className="leading-snug">{point}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Tools & Tech Chips */}
+                        <div className="pt-2">
+                          <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">
+                            Tools & Hardware Mastered:
+                          </p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {course.tools.map((tool) => (
+                              <span
+                                key={tool}
+                                className="text-[10px] font-semibold bg-slate-800 text-slate-200 px-2.5 py-1 rounded-lg border border-slate-700"
+                              >
+                                {tool}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Certification Badge */}
+                        <div className="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60 flex items-center gap-2 text-[11px] text-slate-300">
+                          <Award className="w-4 h-4 text-amber-400 shrink-0" />
+                          <span>
+                            Includes:{" "}
+                            <strong className="text-white">{course.certificate}</strong>
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Bottom CTA Actions */}
+                      <div className="pt-5 mt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center gap-2.5">
+                        <a
+                          href={`https://wa.me/919876687109?text=Hello%20VIZ%20Tech%20Academy,%20I%20am%20interested%20in%20enrolling%20in%20the%20${encodeURIComponent(
+                            course.title
+                          )}.%20Please%20share%20the%20batch%20timings%20and%20fees.`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full flex-1"
                         >
-                          Enroll Now
-                        </Button>
-                      </Link>
+                          <Button className="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-5 rounded-xl shadow-md transition-all text-xs flex items-center justify-center gap-1.5">
+                            <MessageCircle className="w-4 h-4 fill-slate-950" />
+                            <span>Book Free Demo</span>
+                          </Button>
+                        </a>
+
+                        <Link href="/contact" className="w-full sm:w-auto">
+                          <Button
+                            variant="outline"
+                            className="w-full sm:w-auto border-slate-700 hover:border-slate-500 text-slate-200 hover:bg-slate-800 text-xs py-5 rounded-xl font-semibold"
+                          >
+                            Enroll Now
+                          </Button>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -484,19 +508,19 @@ export function AiRoboticsClasses() {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full md:w-auto shrink-0">
             <a
               href="https://wa.me/919876687109?text=Hello%20VIZ%20Digital,%20I%20would%20like%20to%20reserve%20a%20seat%20for%20the%20Free%20Weekend%20Demo%20Class%20in%20AI%20and%20Robotics."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg transition-transform hover:scale-105 text-xs sm:text-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg transition-transform hover:scale-105 text-xs sm:text-sm text-center"
             >
               <MessageCircle className="w-4 h-4 fill-slate-950" />
               <span>Reserve Free Seat via WhatsApp</span>
             </a>
             <a
               href="tel:9876687109"
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-5 py-3.5 rounded-xl border border-white/20 transition-colors text-xs sm:text-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-5 py-3.5 rounded-xl border border-white/20 transition-colors text-xs sm:text-sm text-center"
             >
               <Phone className="w-4 h-4 text-cyan-400" />
               <span>Call: 98766 87109</span>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -41,6 +42,8 @@ export function AllOfferingsShowcase() {
       title: "Digital Marketing",
       shortTitle: "Marketing & Ads",
       icon: TrendingUp,
+      image: "/images/services/digital-marketing.jpg",
+      photoCaption: "High-ROI Performance Marketing & Ad Funnels",
       color: "text-blue-600 bg-blue-50 border-blue-200",
       accentGradient: "from-blue-600 via-indigo-600 to-cyan-500",
       headline: "Performance Marketing & Customer Footfall Funnels",
@@ -89,6 +92,8 @@ export function AllOfferingsShowcase() {
       title: "Restaurant & Cafe Setup",
       shortTitle: "Restaurant Setup",
       icon: UtensilsCrossed,
+      image: "/images/services/restaurant-setup.jpg",
+      photoCaption: "Turnkey Kitchen Architecture & Dining Room Ambience",
       color: "text-orange-600 bg-orange-50 border-orange-200",
       accentGradient: "from-orange-600 via-amber-600 to-red-500",
       headline: "Turnkey Restaurant & Cafe Launch in 60–90 Days",
@@ -137,6 +142,8 @@ export function AllOfferingsShowcase() {
       title: "Franchise Expansion",
       shortTitle: "Franchise Scaling",
       icon: Store,
+      image: "/images/services/franchise-consultancy.jpg",
+      photoCaption: "Franchise Expansion Blueprint & Multi-Outlet Scaling",
       color: "text-amber-600 bg-amber-50 border-amber-200",
       accentGradient: "from-amber-600 via-orange-600 to-yellow-500",
       headline: "Scale from 1 Single Location to a 10+ Outlet Franchise Chain",
@@ -185,6 +192,8 @@ export function AllOfferingsShowcase() {
       title: "Brand Management",
       shortTitle: "Luxury Branding",
       icon: Sparkles,
+      image: "/images/services/brand-management.jpg",
+      photoCaption: "Luxury Brand Identity, Stationery & Packaging Systems",
       color: "text-purple-600 bg-purple-50 border-purple-200",
       accentGradient: "from-purple-600 via-indigo-600 to-pink-500",
       headline: "Luxury Visual Identity, 3D Store Architecture & VIP Launches",
@@ -233,6 +242,8 @@ export function AllOfferingsShowcase() {
       title: "IT & Cloud Systems",
       shortTitle: "IT & Cloud POS",
       icon: Cpu,
+      image: "/images/services/information-technology.jpg",
+      photoCaption: "Modern Cloud POS Billing & Multi-Location Cloud Sync",
       color: "text-indigo-600 bg-indigo-50 border-indigo-200",
       accentGradient: "from-indigo-600 via-blue-600 to-cyan-500",
       headline: "Cloud POS, Central Multi-Store ERP & Custom Web Systems",
@@ -281,6 +292,8 @@ export function AllOfferingsShowcase() {
       title: "AI & Robotics Academy",
       shortTitle: "AI & Robotics",
       icon: Bot,
+      image: "/images/services/ai-classes.jpg",
+      photoCaption: "Hands-on GenAI Masterclass & Robotics STEM Hardware Lab",
       color: "text-cyan-600 bg-cyan-50 border-cyan-200",
       accentGradient: "from-cyan-600 via-blue-600 to-indigo-600",
       headline: "Hands-on Practical AI Masterclasses & Robotics Hardware Labs",
@@ -366,7 +379,7 @@ export function AllOfferingsShowcase() {
         </div>
 
         {/* Pillar Switcher Navigation Bar - All 6 Pillars Visually Equal */}
-        <div className="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar">
+        <div className="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar scroll-touch">
           {pillars.map((pillar) => {
             const Icon = pillar.icon;
             const isSelected = selectedPillar === pillar.id;
@@ -374,7 +387,7 @@ export function AllOfferingsShowcase() {
               <button
                 key={pillar.id}
                 onClick={() => setSelectedPillar(pillar.id)}
-                className={`flex items-center gap-2 px-4 sm:px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-300 shrink-0 border ${
+                className={`flex items-center gap-2 px-4 sm:px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-300 shrink-0 border whitespace-nowrap ${
                   isSelected
                     ? "bg-slate-900 text-white shadow-xl shadow-slate-900/20 scale-[1.03] border-slate-900"
                     : "bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900 border-slate-200/90 shadow-xs"
@@ -404,11 +417,11 @@ export function AllOfferingsShowcase() {
             className="bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden"
           >
             {/* Top Showcase Banner with Metrics */}
-            <div className="bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 text-white p-7 sm:p-10 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 text-white p-5 sm:p-8 lg:p-10 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
-              <div className="relative z-10 grid lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-8 space-y-4">
+              <div className="relative z-10 grid lg:grid-cols-12 gap-6 sm:gap-8 items-center">
+                <div className="lg:col-span-7 space-y-4">
                   <div className="flex flex-wrap items-center gap-2.5">
                     <span className="text-xs font-bold uppercase tracking-wider bg-white/10 px-3 py-1 rounded-full border border-white/15 flex items-center gap-1.5">
                       <CurrentIcon className="w-3.5 h-3.5 text-blue-400" />
@@ -419,39 +432,67 @@ export function AllOfferingsShowcase() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-4xl font-black text-white leading-tight">
+                  <h3 className="text-xl sm:text-3xl lg:text-4xl font-black text-white leading-tight">
                     {current.headline}
                   </h3>
 
-                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-3xl">
+                  <p className="text-xs sm:text-sm lg:text-base text-slate-300 leading-relaxed max-w-2xl">
                     {current.description}
                   </p>
+
+                  {/* Live Stat Badges in a Row */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2">
+                    {current.stats.map((stat, i) => (
+                      <div
+                        key={i}
+                        className="p-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm space-y-0.5 flex sm:flex-col justify-between sm:justify-start items-center sm:items-start"
+                      >
+                        <div>
+                          <span className="text-[10px] text-slate-400 block font-medium">
+                            {stat.label}
+                          </span>
+                          <span className="text-base sm:text-xl font-black text-white block">
+                            {stat.value}
+                          </span>
+                        </div>
+                        <span className="text-[10px] text-emerald-400 font-semibold block">
+                          {stat.subtext}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                {/* Live Stat Badges Column */}
-                <div className="lg:col-span-4 grid grid-cols-3 lg:grid-cols-1 gap-2.5">
-                  {current.stats.map((stat, i) => (
-                    <div
-                      key={i}
-                      className="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm space-y-0.5"
-                    >
-                      <span className="text-[10px] text-slate-400 block font-medium">
-                        {stat.label}
-                      </span>
-                      <span className="text-xl sm:text-2xl font-black text-white block">
-                        {stat.value}
-                      </span>
-                      <span className="text-[10px] text-emerald-400 font-semibold block">
-                        {stat.subtext}
-                      </span>
+                {/* Right: High-Impact Real-World Photo Frame */}
+                <div className="lg:col-span-5 relative w-full">
+                  <div className="relative h-56 sm:h-64 lg:h-72 w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl shadow-black/50 group bg-slate-900">
+                    <Image
+                      src={current.image}
+                      alt={current.title}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
+
+                    {/* Live Verification Badge */}
+                    <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-emerald-500/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+                      <span>Verified Setup</span>
                     </div>
-                  ))}
+
+                    {/* Photo Caption Overlay */}
+                    <div className="absolute bottom-3 left-3 right-3 text-xs font-semibold text-white/95 bg-black/65 backdrop-blur-md p-2.5 rounded-xl border border-white/15 flex items-center justify-between">
+                      <span className="truncate">{current.photoCaption}</span>
+                      <span className="text-[10px] font-bold text-cyan-300 uppercase tracking-wider shrink-0 ml-2">VIZ Proof</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Bottom Content: Execution Roadmap & Deliverables */}
-            <div className="p-7 sm:p-10 grid lg:grid-cols-12 gap-10">
+            <div className="p-5 sm:p-8 lg:p-10 grid lg:grid-cols-12 gap-8 lg:gap-10">
               {/* Left Column: 4-Step Milestone Roadmap */}
               <div className="lg:col-span-7 space-y-6">
                 <div className="space-y-1">
@@ -523,7 +564,7 @@ export function AllOfferingsShowcase() {
                       href="https://wa.me/919876687109?text=Hello%20VIZ%20Digital,%20I%20would%20like%20to%20consult%20regarding%20your%20services."
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-3 rounded-2xl text-xs transition-colors shrink-0 shadow-sm"
+                      className="inline-flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-3 rounded-2xl text-xs transition-colors shrink-0 shadow-sm w-full sm:w-auto"
                     >
                       <MessageCircle className="w-4 h-4" />
                       <span>WhatsApp Desk</span>
