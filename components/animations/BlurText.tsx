@@ -48,7 +48,13 @@ export function BlurText({
   const ref = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    if (!ref.current) return;
+    // Safety fallback: ensure text animates in and is never stuck hidden on mobile browsers
+    const timer = setTimeout(() => {
+      setInView(true);
+    }, 350);
+
+    if (!ref.current) return () => clearTimeout(timer);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -59,7 +65,10 @@ export function BlurText({
       { threshold, rootMargin }
     );
     observer.observe(ref.current);
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
   }, [threshold, rootMargin]);
 
   const defaultFrom = useMemo(
@@ -90,7 +99,7 @@ export function BlurText({
   const times = Array.from({ length: stepCount }, (_, i) => (stepCount === 1 ? 0 : i / (stepCount - 1)));
 
   return (
-    <div ref={ref} className={`blur-text ${className} inline-flex flex-wrap`}>
+    <span ref={ref} className={`blur-text ${className} inline max-w-full break-words`}>
       {elements.map((segment, index) => {
         const animateKeyframes = buildKeyframes(fromSnapshot, toSnapshots);
 
@@ -102,23 +111,24 @@ export function BlurText({
         };
 
         return (
-          <motion.span
-            key={index}
-            initial={fromSnapshot}
-            animate={inView ? animateKeyframes : fromSnapshot}
-            transition={spanTransition}
-            onAnimationComplete={index === elements.length - 1 ? onAnimationComplete : undefined}
-            style={{
-              display: "inline-block",
-              willChange: "transform, filter, opacity",
-            }}
-          >
-            {segment === " " ? "\u00A0" : segment}
-            {animateBy === "words" && index < elements.length - 1 && "\u00A0"}
-          </motion.span>
+          <span key={index} className="inline-block max-w-full break-words mr-[0.25em] last:mr-0">
+            <motion.span
+              initial={fromSnapshot}
+              animate={inView ? animateKeyframes : fromSnapshot}
+              transition={spanTransition}
+              onAnimationComplete={index === elements.length - 1 ? onAnimationComplete : undefined}
+              className="inline-block max-w-full break-words"
+              style={{
+                display: "inline-block",
+                willChange: "transform, filter, opacity",
+              }}
+            >
+              {segment}
+            </motion.span>
+          </span>
         );
       })}
-    </div>
+    </span>
   );
 }
 

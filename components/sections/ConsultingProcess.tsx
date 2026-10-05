@@ -76,16 +76,18 @@ const processSteps = [
 
 export function ConsultingProcess() {
   return (
-    <section className="py-20 sm:py-28 bg-white border-t border-slate-100 relative overflow-hidden">
+    <section className="py-16 sm:py-28 bg-white border-t border-slate-100 relative overflow-hidden [overflow-x:clip] w-full max-w-full isolate">
       {/* Background Subtle Gradient Blobs */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-10 right-0 w-96 h-96 bg-orange-100/30 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10 [contain:paint]">
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 sm:w-96 h-64 sm:h-96 bg-blue-100/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-orange-100/30 rounded-full blur-3xl" />
+      </div>
 
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl w-full min-w-0">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 shadow-xs">
-            <TrendingUp className="w-4 h-4 text-blue-600" />
+        <div className="max-w-3xl mx-auto text-center space-y-4 mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 shadow-xs max-w-full">
+            <TrendingUp className="w-4 h-4 text-blue-600 shrink-0" />
             <ShinyText
               text="Our Proven Methodology"
               color="#1e3a8a"
@@ -95,24 +97,25 @@ export function ConsultingProcess() {
             />
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight break-words">
             <BlurText
               text="How We Transform Ideas Into"
               delay={60}
-              className="text-slate-900 block"
+              className="text-slate-900 inline sm:block"
             />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-orange-500 block mt-1">
+            {" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-orange-500 inline sm:block mt-1">
               Commercial Empires
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
             From Day 1 discovery to opening day crowds and multi-unit franchise expansion, our 4-stage consulting roadmap eliminates costly mistakes.
           </p>
         </div>
 
         {/* 4-Step Process Grid with SpotlightCards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full min-w-0">
           {processSteps.map((step, idx) => {
             const Icon = step.icon;
             return (
@@ -122,28 +125,28 @@ export function ConsultingProcess() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="h-full"
+                className="h-full min-w-0"
               >
                 <SpotlightCard
                   spotlightColor="rgba(37, 99, 235, 0.1)"
-                  className="bg-white rounded-3xl p-5 sm:p-7 border border-slate-200/90 shadow-soft hover:shadow-card-hover hover:border-blue-300 transition-all duration-300 flex flex-col justify-between group h-full"
+                  className="bg-white rounded-3xl p-4 sm:p-6 lg:p-7 border border-slate-200/90 shadow-soft hover:shadow-card-hover hover:border-blue-300 transition-all duration-300 flex flex-col justify-between group h-full min-w-0"
                 >
-                  <div className="space-y-5">
+                  <div className="space-y-4 sm:space-y-5">
                     {/* Step number and icon */}
                     <div className="flex items-center justify-between">
-                      <span className="text-3xl font-black text-slate-300 group-hover:text-blue-600 transition-colors">
+                      <span className="text-2xl sm:text-3xl font-black text-slate-300 group-hover:text-blue-600 transition-colors">
                         {step.step}
                       </span>
-                      <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-xs">
-                        <Icon className="w-6 h-6 stroke-[1.8]" />
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-xs shrink-0">
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.8]" />
                       </div>
                     </div>
 
                     <div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200/60 inline-block mb-2">
+                      <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200/60 inline-block mb-1.5 sm:mb-2">
                         {step.badge}
                       </span>
-                      <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
                         {step.title}
                       </h3>
                     </div>
@@ -166,7 +169,7 @@ export function ConsultingProcess() {
                     </ul>
                   </div>
 
-                  <div className="pt-5 mt-4 border-t border-slate-100">
+                  <div className="pt-4 sm:pt-5 mt-4 border-t border-slate-100">
                     <span className="text-xs font-bold text-blue-600 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                       <span>Phase {step.step} Milestone</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -179,8 +182,8 @@ export function ConsultingProcess() {
         </div>
 
         {/* Bottom Discovery Session CTA Bar */}
-        <div className="mt-14 max-w-4xl mx-auto bg-gradient-to-r from-blue-50 via-slate-50 to-orange-50 p-5 sm:p-8 rounded-3xl border border-blue-200/80 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-5 sm:gap-6 shadow-soft">
-          <div className="space-y-1 text-center sm:text-left">
+        <div className="mt-10 sm:mt-14 max-w-4xl mx-auto bg-gradient-to-r from-blue-50 via-slate-50 to-orange-50 p-4 sm:p-8 rounded-3xl border border-blue-200/80 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 sm:gap-6 shadow-soft w-full min-w-0">
+          <div className="space-y-1 text-center sm:text-left min-w-0">
             <h4 className="text-base sm:text-lg font-bold text-slate-900">
               Ready to start at Step 01?
             </h4>
@@ -190,7 +193,7 @@ export function ConsultingProcess() {
           </div>
 
           <Link href="/contact" className="shrink-0 w-full sm:w-auto">
-            <Button className="w-full sm:w-auto rounded-xl px-7 py-5 text-xs sm:text-sm font-bold bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-600/20">
+            <Button className="w-full sm:w-auto rounded-xl px-6 sm:px-7 py-5 text-xs sm:text-sm font-bold bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-600/20">
               <span>Book Strategy Session</span>
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>

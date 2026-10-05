@@ -141,8 +141,8 @@ export function ClickSpark({
   };
 
   return (
-    <div className={`relative w-full ${className}`} onClick={handleClick}>
-      <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-50 w-full h-full" />
+    <div className={`relative w-full max-w-full overflow-hidden ${className}`} onClick={handleClick}>
+      <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-50 w-full h-full max-w-full" />
       {children}
     </div>
   );

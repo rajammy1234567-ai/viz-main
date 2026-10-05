@@ -182,8 +182,10 @@ export default function ServicesPage() {
       </section>
 
       {/* SERVICE 2: Artificial Intelligence (AI) Classes */}
-      <section id="ai-classes" className="py-20 bg-gradient-to-b from-slate-900 via-[#0c152e] to-slate-900 text-white border-b border-slate-800 scroll-mt-20 relative overflow-hidden">
-        <div className="absolute top-10 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      <section id="ai-classes" className="py-20 bg-gradient-to-b from-slate-900 via-[#0c152e] to-slate-900 text-white border-b border-slate-800 scroll-mt-20 relative overflow-hidden [overflow-x:clip] isolate">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10 [contain:paint]">
+          <div className="absolute top-10 right-10 w-64 sm:w-96 h-64 sm:h-96 bg-purple-600/10 rounded-full blur-3xl" />
+        </div>
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
             <div className="grid lg:grid-cols-12 gap-10 items-center">

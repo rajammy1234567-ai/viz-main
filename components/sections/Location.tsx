@@ -21,16 +21,18 @@ export function LocationSection() {
     "https://maps.google.com/?q=Motiaz+Royal+Business+Park,+Zirakpur,+Punjab+140603";
 
   return (
-    <section className="py-20 sm:py-28 bg-gradient-to-b from-white via-slate-50/70 to-white relative overflow-hidden border-t border-slate-100">
+    <section className="py-16 sm:py-28 bg-gradient-to-b from-white via-slate-50/70 to-white relative overflow-hidden [overflow-x:clip] border-t border-slate-100 w-full max-w-full isolate">
       {/* Background Ambient Glows */}
-      <div className="absolute top-1/3 left-0 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-10 right-0 w-96 h-96 bg-orange-100/30 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10 [contain:paint]">
+        <div className="absolute top-1/3 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-blue-100/40 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-orange-100/30 rounded-full blur-3xl" />
+      </div>
 
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl w-full min-w-0">
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-blue-600 animate-ping" />
+        <div className="max-w-3xl mx-auto text-center space-y-4 mb-10 sm:mb-14">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 shadow-xs max-w-full">
+            <span className="w-2 h-2 rounded-full bg-blue-600 animate-ping shrink-0" />
             <ShinyText
               text="Headquarters & Presence"
               color="#1e3a8a"
@@ -40,68 +42,69 @@ export function LocationSection() {
             />
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight break-words">
             <BlurText
               text="Strategically Based in"
               delay={70}
-              className="text-slate-900 block"
+              className="text-slate-900 inline sm:block"
             />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-orange-500 block mt-1">
+            {" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-orange-500 inline sm:block mt-1">
               Zirakpur, Punjab
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
             Conveniently situated in the Tricity commercial corridor (Chandigarh, Mohali, Panchkula) with rapid access to national highways and airports.
           </p>
         </div>
 
         {/* Quick Regional Highlights */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12 max-w-4xl mx-auto">
-          <div className="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-xs flex items-center gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-10 sm:mb-12 max-w-4xl mx-auto w-full min-w-0">
+          <div className="bg-white p-3.5 sm:p-4 rounded-2xl border border-slate-200/80 shadow-xs flex items-center gap-3 min-w-0">
             <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
               <Plane className="w-5 h-5" />
             </div>
-            <div>
-              <p className="text-xs font-bold text-slate-900">15 Mins to Airport</p>
-              <p className="text-[11px] text-slate-500 font-medium">Shaheed Bhagat Singh Intl Airport</p>
+            <div className="min-w-0">
+              <p className="text-xs font-bold text-slate-900 truncate">15 Mins to Airport</p>
+              <p className="text-[11px] text-slate-500 font-medium truncate">Shaheed Bhagat Singh Intl Airport</p>
             </div>
           </div>
 
-          <div className="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-xs flex items-center gap-3">
+          <div className="bg-white p-3.5 sm:p-4 rounded-2xl border border-slate-200/80 shadow-xs flex items-center gap-3 min-w-0">
             <div className="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center shrink-0">
               <Building2 className="w-5 h-5" />
             </div>
-            <div>
-              <p className="text-xs font-bold text-slate-900">Motiaz Business Park</p>
-              <p className="text-[11px] text-slate-500 font-medium">Prime Commercial Complex</p>
+            <div className="min-w-0">
+              <p className="text-xs font-bold text-slate-900 truncate">Motiaz Business Park</p>
+              <p className="text-[11px] text-slate-500 font-medium truncate">Prime Commercial Complex</p>
             </div>
           </div>
 
-          <div className="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-xs flex items-center gap-3">
+          <div className="bg-white p-3.5 sm:p-4 rounded-2xl border border-slate-200/80 shadow-xs flex items-center gap-3 min-w-0">
             <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
               <Navigation className="w-5 h-5" />
             </div>
-            <div>
-              <p className="text-xs font-bold text-slate-900">Highway Connectivity</p>
-              <p className="text-[11px] text-slate-500 font-medium">Direct on NH-152 Expressway</p>
+            <div className="min-w-0">
+              <p className="text-xs font-bold text-slate-900 truncate">Highway Connectivity</p>
+              <p className="text-[11px] text-slate-500 font-medium truncate">Direct on NH-152 Expressway</p>
             </div>
           </div>
         </div>
 
         {/* Main Grid: Details Left, Interactive Map Right */}
-        <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 items-stretch w-full min-w-0">
           {/* Details Card (5 cols) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-5 h-full"
+            className="lg:col-span-5 h-full min-w-0 w-full"
           >
             <SpotlightCard
               spotlightColor="rgba(37, 99, 235, 0.09)"
-              className="bg-white rounded-3xl p-5 sm:p-7 md:p-9 border border-slate-200/90 shadow-soft flex flex-col justify-between space-y-6 h-full"
+              className="bg-white rounded-3xl p-4 sm:p-7 md:p-9 border border-slate-200/90 shadow-soft flex flex-col justify-between space-y-6 h-full min-w-0"
             >
               <div className="space-y-6">
                 {/* Header inside card */}
@@ -229,7 +232,7 @@ export function LocationSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="lg:col-span-7 bg-white rounded-3xl p-3 sm:p-4 border border-slate-200/90 shadow-soft flex flex-col justify-between relative overflow-hidden min-h-[350px] sm:min-h-[420px]"
+            className="lg:col-span-7 bg-white rounded-3xl p-3 sm:p-4 border border-slate-200/90 shadow-soft flex flex-col justify-between relative overflow-hidden min-h-[320px] sm:min-h-[420px] min-w-0 w-full"
           >
             {/* Top Interactive Banner on Map */}
             <div className="p-3 bg-slate-50/90 rounded-2xl border border-slate-200/80 mb-3 flex flex-col sm:flex-row gap-2 items-start sm:items-center justify-between text-xs">

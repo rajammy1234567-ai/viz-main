@@ -99,16 +99,18 @@ export function HappyFamiliesShowcase() {
   const current = clientFamilies[activeTab];
 
   return (
-    <section className="py-20 sm:py-28 relative overflow-hidden bg-gradient-to-b from-white via-slate-50/60 to-white">
+    <section className="py-16 sm:py-28 relative overflow-hidden [overflow-x:clip] bg-gradient-to-b from-white via-slate-50/60 to-white w-full max-w-full isolate">
       {/* Background Decorative Mesh Elements */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-0 w-96 h-96 bg-orange-100/40 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10 [contain:paint]">
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 sm:w-96 h-64 sm:h-96 bg-blue-100/40 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-orange-100/40 rounded-full blur-3xl" />
+      </div>
 
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl w-full min-w-0">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 shadow-xs">
-            <Sparkles className="w-4 h-4 text-blue-600 animate-pulse" />
+        <div className="max-w-3xl mx-auto text-center space-y-4 mb-10 sm:mb-14">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 shadow-xs max-w-full">
+            <Sparkles className="w-4 h-4 text-blue-600 animate-pulse shrink-0" />
             <ShinyText
               text="1,000+ Happy Customer Families"
               color="#1e3a8a"
@@ -118,48 +120,51 @@ export function HappyFamiliesShowcase() {
             />
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight break-words">
             <BlurText
               text="Real Families. Real Businesses."
               delay={80}
-              className="text-slate-900 block"
+              className="text-slate-900 inline sm:block"
             />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-orange-600 block mt-1">
+            {" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-orange-600 inline sm:block mt-1">
               Unstoppable Growth.
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
             From family-owned restaurants and flagship lifestyle boutiques to multi-outlet healthcare centers, see how over 1,000+ customer families have partnered with VIZ Digital to build sustainable commercial empires.
           </p>
         </div>
 
         {/* Tab Selection */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-10">
-          {clientFamilies.map((fam, index) => {
-            const isActive = index === activeTab;
-            return (
-              <button
-                key={fam.id}
-                onClick={() => setActiveTab(index)}
-                className={`relative px-4 sm:px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2.5 ${
-                  isActive
-                    ? "bg-slate-900 text-white shadow-lg shadow-slate-900/20 scale-105"
-                    : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 shadow-xs"
-                }`}
-              >
-                <div
-                  className={`w-2 h-2 rounded-full ${
-                    isActive ? "bg-orange-400 animate-pulse" : "bg-slate-300"
+        <div className="w-full max-w-full overflow-x-auto no-scrollbar scroll-touch pb-2 mb-8 sm:mb-10">
+          <div className="flex items-center justify-start sm:justify-center gap-2 sm:gap-3 min-w-max px-2">
+            {clientFamilies.map((fam, index) => {
+              const isActive = index === activeTab;
+              return (
+                <button
+                  key={fam.id}
+                  onClick={() => setActiveTab(index)}
+                  className={`relative px-3.5 sm:px-6 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 ${
+                    isActive
+                      ? "bg-slate-900 text-white shadow-lg shadow-slate-900/20 scale-[1.02]"
+                      : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 shadow-xs"
                   }`}
-                />
-                <span>{fam.name}</span>
-                <span className="text-[11px] opacity-75 font-normal hidden md:inline">
-                  • {fam.category}
-                </span>
-              </button>
-            );
-          })}
+                >
+                  <div
+                    className={`w-2 h-2 rounded-full shrink-0 ${
+                      isActive ? "bg-orange-400 animate-pulse" : "bg-slate-300"
+                    }`}
+                  />
+                  <span>{fam.name}</span>
+                  <span className="text-[11px] opacity-75 font-normal hidden md:inline">
+                    • {fam.category}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Active Family Card with Animation */}
@@ -170,11 +175,11 @@ export function HappyFamiliesShowcase() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
-            className="bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden grid lg:grid-cols-12 gap-0 relative"
+            className="bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden grid lg:grid-cols-12 gap-0 relative w-full max-w-full"
           >
             {/* Left: Authentic Real Client Photo with Verified Proof Badge */}
-            <div className="lg:col-span-6 relative min-h-[360px] sm:min-h-[440px] lg:min-h-[480px] w-full overflow-hidden group bg-slate-950">
-              <div className="relative w-full h-full min-h-[360px] sm:min-h-[440px] lg:min-h-[480px]">
+            <div className="lg:col-span-6 relative min-h-[320px] sm:min-h-[440px] lg:min-h-[480px] w-full overflow-hidden group bg-slate-950 min-w-0">
+              <div className="relative w-full h-full min-h-[320px] sm:min-h-[440px] lg:min-h-[480px]">
                 <Image
                   src={current.image}
                   alt={`${current.name} - ${current.business}`}
@@ -189,26 +194,26 @@ export function HappyFamiliesShowcase() {
                 <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-transparent to-transparent pointer-events-none" />
 
                 {/* Top Badges */}
-                <div className="absolute top-4 sm:top-5 left-4 sm:left-5 right-4 sm:right-5 flex items-center justify-between z-10 gap-2">
+                <div className="absolute top-3 sm:top-5 left-3 sm:left-5 right-3 sm:right-5 flex flex-wrap items-center justify-between z-10 gap-2">
                   <div className="bg-slate-900/85 backdrop-blur-md px-3 sm:px-3.5 py-1.5 rounded-full border border-white/20 flex items-center gap-2 shadow-lg">
                     <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
                     <span className="text-[11px] sm:text-xs font-bold text-white">
                       Verified Client Partner
                     </span>
                   </div>
-                  <span className="text-[11px] sm:text-xs font-bold text-orange-300 bg-slate-900/85 backdrop-blur-md px-3 py-1 rounded-full border border-orange-400/30 shadow-lg truncate">
+                  <span className="text-[11px] sm:text-xs font-bold text-orange-300 bg-slate-900/85 backdrop-blur-md px-3 py-1 rounded-full border border-orange-400/30 shadow-lg truncate max-w-[160px] sm:max-w-none">
                     {current.category}
                   </span>
                 </div>
 
                 {/* Bottom Verified Client Details on Photo */}
-                <div className="absolute bottom-4 sm:bottom-5 left-4 sm:left-5 right-4 sm:right-5 z-10 space-y-2.5 sm:space-y-3">
+                <div className="absolute bottom-3 sm:bottom-5 left-3 sm:left-5 right-3 sm:right-5 z-10 space-y-2 sm:space-y-3">
                   <div>
                     <div className="flex items-center gap-1.5 text-xs font-semibold text-orange-300 mb-1">
                       <MapPin className="w-3.5 h-3.5" />
                       <span>{current.location}</span>
                     </div>
-                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white drop-shadow-md">
+                    <h3 className="text-lg sm:text-2xl lg:text-3xl font-black text-white drop-shadow-md">
                       {current.business}
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-200 font-medium mt-0.5">
@@ -232,7 +237,7 @@ export function HappyFamiliesShowcase() {
             </div>
 
             {/* Right: Success Story Narrative & Metrics */}
-            <div className="lg:col-span-6 p-5 sm:p-8 lg:p-12 flex flex-col justify-between space-y-6">
+            <div className="lg:col-span-6 p-4 sm:p-8 lg:p-12 flex flex-col justify-between space-y-5 sm:space-y-6 min-w-0 w-full max-w-full">
               <div className="space-y-6">
                 {/* Header with Category and Rating */}
                 <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-5">
@@ -309,7 +314,7 @@ export function HappyFamiliesShowcase() {
         </AnimatePresence>
 
         {/* Bottom Social Proof Counter Strip */}
-        <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+        <div className="mt-10 sm:mt-14 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto w-full min-w-0">
           {[
             {
               icon: Users,
@@ -347,12 +352,12 @@ export function HappyFamiliesShowcase() {
               <SpotlightCard
                 key={idx}
                 spotlightColor="rgba(37, 99, 235, 0.12)"
-                className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-soft transition-all duration-300 text-center space-y-1.5 group"
+                className="bg-white p-3.5 sm:p-5 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-soft transition-all duration-300 text-center space-y-1 sm:space-y-1.5 group min-w-0"
               >
-                <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                  <Icon className="w-5 h-5" />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                  <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                <div className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
                   <CountUp
                     to={stat.num}
                     prefix={stat.prefix}
@@ -361,10 +366,10 @@ export function HappyFamiliesShowcase() {
                     duration={2.2}
                   />
                 </div>
-                <div className="text-xs font-bold text-slate-800">
+                <div className="text-[11px] sm:text-xs font-bold text-slate-800 truncate">
                   {stat.label}
                 </div>
-                <div className="text-[11px] text-slate-500 font-medium">
+                <div className="text-[10px] sm:text-[11px] text-slate-500 font-medium truncate">
                   {stat.sub}
                 </div>
               </SpotlightCard>

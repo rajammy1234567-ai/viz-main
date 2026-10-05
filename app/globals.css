@@ -34,7 +34,8 @@
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    max-width: 100vw;
+    overflow-x: clip;
+    max-width: 100%;
     width: 100%;
     -webkit-text-size-adjust: 100%;
   }
@@ -43,10 +44,17 @@
     @apply bg-white text-slate-900 antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     overflow-x: hidden;
-    max-width: 100vw;
+    overflow-x: clip;
+    max-width: 100%;
     width: 100%;
     position: relative;
     touch-action: manipulation;
+  }
+
+  /* Universal viewport clipping to prevent any horizontal scroll on mobile */
+  html, body, main {
+    overflow-x: clip !important;
+    max-width: 100vw;
   }
 
   img, video, canvas, svg {

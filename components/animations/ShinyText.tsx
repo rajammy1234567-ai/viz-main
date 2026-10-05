@@ -90,7 +90,7 @@ export function ShinyText({
 
   return (
     <motion.span
-      className={`inline-block ${className}`}
+      className={`inline max-w-full break-words whitespace-normal ${className}`}
       style={{ ...gradientStyle, backgroundPosition }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

@@ -343,16 +343,18 @@ export function AllOfferingsShowcase() {
   const CurrentIcon = current.icon;
 
   return (
-    <section id="all-offerings" className="py-20 sm:py-28 bg-slate-50/70 border-b border-slate-200 relative overflow-hidden scroll-mt-20">
+    <section id="all-offerings" className="py-16 sm:py-28 bg-slate-50/70 border-b border-slate-200 relative overflow-hidden [overflow-x:clip] scroll-mt-20 w-full max-w-full isolate">
       {/* Background Decorative Mesh Glows */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10 [contain:paint]">
+        <div className="absolute top-1/4 -left-20 w-64 sm:w-96 h-64 sm:h-96 bg-blue-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 -right-20 w-64 sm:w-96 h-64 sm:h-96 bg-orange-500/10 rounded-full blur-3xl" />
+      </div>
 
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl w-full min-w-0">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-blue-200/90 shadow-xs">
-            <Sparkles className="w-4 h-4 text-blue-600 animate-pulse" />
+        <div className="max-w-3xl mx-auto text-center space-y-4 mb-10 sm:mb-14">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-blue-200/90 shadow-xs max-w-full">
+            <Sparkles className="w-4 h-4 text-blue-600 animate-pulse shrink-0" />
             <ShinyText
               text="Comprehensive Business & Tech Architecture"
               color="#1e3a8a"
@@ -362,48 +364,51 @@ export function AllOfferingsShowcase() {
             />
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight break-words">
             <BlurText
               text="What We Provide:"
               delay={60}
-              className="text-slate-900 block"
+              className="text-slate-900 inline sm:block"
             />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-orange-500 block mt-1">
+            {" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-orange-500 inline sm:block mt-1">
               Every Solution, Highlighted in Full Depth.
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
             We don&apos;t just specialize in one domain. Explore how VIZ Digital drives complete transformation across marketing, hospitality, franchising, branding, enterprise IT, and future tech education.
           </p>
         </div>
 
         {/* Pillar Switcher Navigation Bar - All 6 Pillars Visually Equal */}
-        <div className="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar scroll-touch">
-          {pillars.map((pillar) => {
-            const Icon = pillar.icon;
-            const isSelected = selectedPillar === pillar.id;
-            return (
-              <button
-                key={pillar.id}
-                onClick={() => setSelectedPillar(pillar.id)}
-                className={`flex items-center gap-2 px-4 sm:px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-300 shrink-0 border whitespace-nowrap ${
-                  isSelected
-                    ? "bg-slate-900 text-white shadow-xl shadow-slate-900/20 scale-[1.03] border-slate-900"
-                    : "bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900 border-slate-200/90 shadow-xs"
-                }`}
-              >
-                <div
-                  className={`w-7 h-7 rounded-xl flex items-center justify-center shrink-0 ${
-                    isSelected ? "bg-white/20 text-white" : pillar.color
+        <div className="w-full max-w-full overflow-x-auto pb-4 mb-8 sm:mb-10 no-scrollbar scroll-touch">
+          <div className="flex items-center justify-start lg:justify-center gap-2 min-w-max px-2">
+            {pillars.map((pillar) => {
+              const Icon = pillar.icon;
+              const isSelected = selectedPillar === pillar.id;
+              return (
+                <button
+                  key={pillar.id}
+                  onClick={() => setSelectedPillar(pillar.id)}
+                  className={`flex items-center gap-2 px-3.5 sm:px-5 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-300 shrink-0 border whitespace-nowrap ${
+                    isSelected
+                      ? "bg-slate-900 text-white shadow-xl shadow-slate-900/20 scale-[1.02] border-slate-900"
+                      : "bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900 border-slate-200/90 shadow-xs"
                   }`}
                 >
-                  <Icon className="w-4 h-4" />
-                </div>
-                <span>{pillar.shortTitle}</span>
-              </button>
-            );
-          })}
+                  <div
+                    className={`w-7 h-7 rounded-xl flex items-center justify-center shrink-0 ${
+                      isSelected ? "bg-white/20 text-white" : pillar.color
+                    }`}
+                  >
+                    <Icon className="w-4 h-4" />
+                  </div>
+                  <span>{pillar.shortTitle}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Selected Pillar Interactive Deep-Dive Card */}
@@ -414,14 +419,14 @@ export function AllOfferingsShowcase() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.35 }}
-            className="bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden"
+            className="bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden w-full max-w-full"
           >
             {/* Top Showcase Banner with Metrics */}
-            <div className="bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 text-white p-5 sm:p-8 lg:p-10 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 text-white p-4 sm:p-8 lg:p-10 relative overflow-hidden w-full max-w-full">
               <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
-              <div className="relative z-10 grid lg:grid-cols-12 gap-6 sm:gap-8 items-center">
-                <div className="lg:col-span-7 space-y-4">
+              <div className="relative z-10 grid lg:grid-cols-12 gap-6 sm:gap-8 items-center w-full min-w-0">
+                <div className="lg:col-span-7 space-y-4 min-w-0 w-full max-w-full">
                   <div className="flex flex-wrap items-center gap-2.5">
                     <span className="text-xs font-bold uppercase tracking-wider bg-white/10 px-3 py-1 rounded-full border border-white/15 flex items-center gap-1.5">
                       <CurrentIcon className="w-3.5 h-3.5 text-blue-400" />
@@ -464,8 +469,8 @@ export function AllOfferingsShowcase() {
                 </div>
 
                 {/* Right: High-Impact Real-World Photo Frame */}
-                <div className="lg:col-span-5 relative w-full">
-                  <div className="relative h-56 sm:h-64 lg:h-72 w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl shadow-black/50 group bg-slate-900">
+                <div className="lg:col-span-5 relative w-full min-w-0">
+                  <div className="relative h-52 sm:h-64 lg:h-72 w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl shadow-black/50 group bg-slate-900">
                     <Image
                       src={current.image}
                       alt={current.title}
@@ -482,7 +487,7 @@ export function AllOfferingsShowcase() {
                     </div>
 
                     {/* Photo Caption Overlay */}
-                    <div className="absolute bottom-3 left-3 right-3 text-xs font-semibold text-white/95 bg-black/65 backdrop-blur-md p-2.5 rounded-xl border border-white/15 flex items-center justify-between">
+                    <div className="absolute bottom-3 left-3 right-3 text-xs font-semibold text-white/95 bg-black/65 backdrop-blur-md p-2 rounded-xl sm:p-2.5 border border-white/15 flex items-center justify-between">
                       <span className="truncate">{current.photoCaption}</span>
                       <span className="text-[10px] font-bold text-cyan-300 uppercase tracking-wider shrink-0 ml-2">VIZ Proof</span>
                     </div>
@@ -492,9 +497,9 @@ export function AllOfferingsShowcase() {
             </div>
 
             {/* Bottom Content: Execution Roadmap & Deliverables */}
-            <div className="p-5 sm:p-8 lg:p-10 grid lg:grid-cols-12 gap-8 lg:gap-10">
+            <div className="p-4 sm:p-8 lg:p-10 grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 w-full min-w-0">
               {/* Left Column: 4-Step Milestone Roadmap */}
-              <div className="lg:col-span-7 space-y-6">
+              <div className="lg:col-span-7 space-y-6 min-w-0 w-full max-w-full">
                 <div className="space-y-1">
                   <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">
                     Operational Blueprint
@@ -504,11 +509,11 @@ export function AllOfferingsShowcase() {
                   </h4>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   {current.roadmap.map((step) => (
                     <div
                       key={step.step}
-                      className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2 hover:border-blue-400 transition-colors"
+                      className="p-3.5 sm:p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1.5 sm:space-y-2 hover:border-blue-400 transition-colors min-w-0"
                     >
                       <div className="flex items-center gap-2">
                         <span className="w-6 h-6 rounded-lg bg-blue-600 text-white text-xs font-black flex items-center justify-center shrink-0">
@@ -527,7 +532,7 @@ export function AllOfferingsShowcase() {
               </div>
 
               {/* Right Column: Tangible Deliverables & CTA */}
-              <div className="lg:col-span-5 flex flex-col justify-between space-y-6 p-6 sm:p-7 rounded-3xl bg-blue-50/50 border border-blue-100">
+              <div className="lg:col-span-5 flex flex-col justify-between space-y-5 sm:space-y-6 p-4 sm:p-6 lg:p-7 rounded-3xl bg-blue-50/50 border border-blue-100 min-w-0 w-full max-w-full">
                 <div className="space-y-4">
                   <div className="space-y-1">
                     <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">

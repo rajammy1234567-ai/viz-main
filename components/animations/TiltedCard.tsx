@@ -62,13 +62,13 @@ export function TiltedCard({
   return (
     <div
       ref={ref}
-      className={`[perspective:1000px] ${className}`}
+      className={`[perspective:1000px] w-full max-w-full min-w-0 overflow-hidden ${className}`}
       onMouseMove={handleMouse}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <motion.div
-        className="relative w-full h-full [transform-style:preserve-3d] will-change-transform"
+        className="relative w-full max-w-full min-w-0 h-full [transform-style:preserve-3d] will-change-transform"
         style={{
           rotateX,
           rotateY,

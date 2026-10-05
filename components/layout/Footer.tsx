@@ -60,9 +60,9 @@ export function Footer() {
         </div>
 
         {/* 4 Columns Grid - Strict 12-column responsive layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 mb-12 sm:mb-16 w-full min-w-0">
           {/* Column 1: Brand (4 cols on lg) */}
-          <div className="lg:col-span-4 space-y-4">
+          <div className="lg:col-span-4 space-y-4 min-w-0">
             <Link href="/" className="inline-flex items-center gap-3 group">
               <div className="relative w-11 h-11 rounded-full overflow-hidden shadow-sm border border-slate-200/80 bg-[#1e232c] shrink-0 group-hover:scale-105 transition-transform duration-300">
                 <Image
@@ -96,7 +96,7 @@ export function Footer() {
           </div>
 
           {/* Column 2: Quick Links (2 cols on lg) */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 min-w-0">
             <h4 className="font-bold text-slate-900 text-sm sm:text-base mb-3 sm:mb-4">
               Quick Links
             </h4>
@@ -115,7 +115,7 @@ export function Footer() {
           </div>
 
           {/* Column 3: Services (3 cols on lg) */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 min-w-0">
             <h4 className="font-bold text-slate-900 text-sm sm:text-base mb-3 sm:mb-4">
               Our Services
             </h4>
@@ -134,7 +134,7 @@ export function Footer() {
           </div>
 
           {/* Column 4: Contact Info (3 cols on lg) */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 min-w-0">
             <h4 className="font-bold text-slate-900 text-sm sm:text-base mb-3 sm:mb-4">
               Contact Details
             </h4>

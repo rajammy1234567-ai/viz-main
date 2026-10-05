@@ -38,18 +38,19 @@ export function BrandMarquee() {
   ];
 
   return (
-    <div className="py-10 bg-slate-900 text-white overflow-hidden relative border-y border-slate-800">
+    <div className="py-8 sm:py-10 bg-slate-900 text-white overflow-hidden relative border-y border-slate-800 w-full max-w-full isolate [contain:paint]">
       {/* Subtle Glow Overlays */}
-      <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-36 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-36 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none" />
 
-      <div className="container mx-auto px-4 mb-4 text-center">
-        <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
+      <div className="container mx-auto px-4 mb-4 text-center w-full min-w-0">
+        <p className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-slate-400">
           Powering 1,000+ Thriving Brands, Performance Marketing Funnels & Next-Gen AI Innovators
         </p>
       </div>
 
-      <div className="flex w-max animate-marquee space-x-6 hover:[animation-play-state:paused]">
+      <div className="w-full max-w-full overflow-hidden [overflow-x:clip] [contain:paint]">
+        <div className="flex w-max animate-marquee space-x-4 sm:space-x-6 hover:[animation-play-state:paused]">
         {[...brands, ...brands].map((brand, idx) => {
           const Icon = brand.icon;
           return (
@@ -71,6 +72,7 @@ export function BrandMarquee() {
             </div>
           );
         })}
+        </div>
       </div>
     </div>
   );
