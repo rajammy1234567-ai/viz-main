@@ -433,8 +433,7 @@ export function AiRoboticsClasses() {
 
                         <Link href="/contact" className="w-full sm:w-auto">
                           <Button
-                            variant="outline"
-                            className="w-full sm:w-auto border-slate-700 hover:border-slate-500 text-slate-200 hover:bg-slate-800 text-xs py-5 rounded-xl font-semibold"
+                            className="w-full sm:w-auto bg-slate-800/90 hover:bg-slate-700 text-white hover:text-white border border-slate-700 hover:border-cyan-400 text-xs py-5 px-5 rounded-xl font-bold transition-all shadow-sm"
                           >
                             Enroll Now
                           </Button>

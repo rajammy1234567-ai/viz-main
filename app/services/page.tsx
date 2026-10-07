@@ -232,7 +232,7 @@ export default function ServicesPage() {
                     </Button>
                   </a>
                   <Link href="/contact">
-                    <Button variant="outline" className="rounded-xl px-6 py-5 border-slate-700 hover:border-slate-500 text-slate-200 hover:bg-slate-800 text-xs sm:text-sm font-semibold">
+                    <Button className="rounded-xl px-6 py-5 bg-slate-800/90 hover:bg-slate-700 text-white hover:text-white border border-slate-700 hover:border-purple-400 text-xs sm:text-sm font-semibold transition-all shadow-sm">
                       View Batch Timings & Fees
                     </Button>
                   </Link>
